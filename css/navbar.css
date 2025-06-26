@@ -13,7 +13,13 @@
 .navbar {
   direction: rtl;
   box-shadow: var(--shadow-sm);
-  padding: 0rem 1rem;
+  padding: 1rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--ebc-light);
 }
 
 .navbar-brand {
@@ -63,6 +69,7 @@
   font-weight: 500;
   padding: 0.5rem 0;
   transition: var(--transition-normal);
+  position: relative;
 }
 
 .navbar-nav .nav-link:hover,
@@ -71,6 +78,37 @@
   background-color: var(--ebc-light-green);
   border-radius: 7px;
 }
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--ebc-teal);
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link:focus::after {
+  width: 100%;
+}
+
+/* Active state for nav links */
+.navbar-nav .nav-link.active {
+  color: var(--ebc-light);
+  background-color: var(--ebc-teal);
+  border-radius: 7px;
+}
+
+/* Specific styling for the "خدماتنا" dropdown link */
+.navbar-nav .dropdown-toggle.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Space between text and arrow */
+}
+
 
 .dropdown-menu {
   right: 0;
@@ -107,6 +145,12 @@
   color: var(--ebc-teal);
 }
 
+/* Active state for dropdown items */
+.dropdown-item.active {
+  background-color: var(--ebc-teal);
+  color: var(--ebc-light);
+}
+
 /* ===== تخصيص زر الانهيار ===== */
 .btn-collapse {
   animation: slideIn 0.5s ease-out;
@@ -131,6 +175,17 @@
     width: 100%;
     margin-top: 1rem;
   }
+  .navbar-nav .nav-link::after {
+    display: none;
+  }
+  .navbar-nav .dropdown-toggle.nav-link::after {
+    font-size: 1.1rem; /* Slightly smaller arrow on mobile */
+    transform: scale(1); /* Reset scale for mobile */
+  }
+  .navbar-nav .dropdown-toggle.nav-link:hover::after,
+  .navbar-nav .dropdown-toggle.nav-link:focus::after {
+    transform: scale(1) rotate(180deg); /* Maintain rotation on hover */
+  }
 }
 
 /* ===== تأثير التحريك ===== */
@@ -149,4 +204,17 @@
 .navbar-toggler {
   border: none;
   padding: 0.25rem;
+}
+
+body {
+  padding-top: 70px;
+}
+
+.dropdown-toggle::after {
+    content: "";
+    border-top: 0.5rem solid;
+    border-right: 0.5rem solid transparent;
+    border-bottom: 0;
+    border-left: .5rem solid transparent;
+    background-color: transparent !important;
 }
