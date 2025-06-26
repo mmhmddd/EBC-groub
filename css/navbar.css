@@ -1,0 +1,152 @@
+/* ===== المتغيرات والألوان الأساسية ===== */
+:root {
+  --ebc-blue: #1E3A8A;
+  --ebc-teal: #14B8A6;
+  --ebc-gray: #6B7280;
+  --ebc-light: #F9FAFB;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --transition-normal: all 0.3s ease;
+  --ebc-light-green: rgb(110, 196, 186);
+}
+
+/* ===== تخصيص الناف بار ===== */
+.navbar {
+  direction: rtl;
+  box-shadow: var(--shadow-sm);
+  padding: 0rem 1rem;
+}
+
+.navbar-brand {
+  color: var(--ebc-blue);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-brand img {
+  height: 50px;
+  margin-right: 0.5rem;
+}
+
+.navbar-brand span p {
+  font-weight: 700;
+  margin-top: 7px;
+  margin-bottom: 0;
+  color: var(--ebc-blue);
+  font-size: 1.3rem;
+}
+
+.log-btn {
+  background-color: var(--ebc-teal) !important;
+  height: 2.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 7px;
+  text-decoration: none;
+  margin-top: 7px;
+  color: white;
+}
+
+.log-btn:hover {
+  opacity: 0.9;
+  color: white;
+  background-color: var(--ebc-light-green);
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar-nav .nav-link {
+  color: var(--ebc-gray);
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: var(--transition-normal);
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: var(--ebc-light);
+  background-color: var(--ebc-light-green);
+  border-radius: 7px;
+}
+
+.dropdown-menu {
+  right: 0;
+  left: auto;
+  min-width: 12rem;
+  border: none;
+  box-shadow: var(--shadow-sm);
+  opacity: 0;
+  transform: translateY(10px);
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  position: absolute;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.dropdown-item {
+  color: var(--ebc-gray);
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  transition: var(--transition-normal);
+  font-weight: 400;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: rgba(20, 184, 166, 0.1);
+  color: var(--ebc-teal);
+}
+
+/* ===== تخصيص زر الانهيار ===== */
+.btn-collapse {
+  animation: slideIn 0.5s ease-out;
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    text-align: center;
+  }
+  .navbar-nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .navbar-nav .nav-item {
+    margin-bottom: 0.5rem;
+  }
+  .log-btn.d-none.d-lg-block {
+    display: none;
+  }
+  .log-btn.d-lg-none {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+/* ===== تأثير التحريك ===== */
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ===== تحسينات إضافية ===== */
+.navbar-toggler {
+  border: none;
+  padding: 0.25rem;
+}
