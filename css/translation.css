@@ -9,7 +9,7 @@
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --transition-normal: all 0.4s ease;
-  --shadow-soft: 0 2px 4px -1px rgba(0, 0, 0, 0.05); /* تم تعريف shadow-soft إذا لزم الأمر */
+  --shadow-soft: 0 2px 4px -1px rgba(0, 0, 0, 0.05);
 }
 
 body {
@@ -44,7 +44,7 @@ body {
   width: 31.25rem;
   height: auto;
   border-radius: 10px;
-  box-shadow: var(--shadow-md), var(--shadow-soft); /* دمج الظلال */
+  box-shadow: var(--shadow-md), var(--shadow-soft);
   border: 15px solid rgba(255, 255, 255, 0.2);
   animation: fadeInLeft 1s ease-out;
 }
@@ -305,8 +305,12 @@ body {
     font-size: 1.5rem;
   }
 
-  .services-grid, .languages-grid, .features-grid, .articles-grid {
+  .services-grid, .features-grid, .articles-grid {
     grid-template-columns: 1fr;
+  }
+
+  .languages-grid {
+    grid-template-columns: repeat(2, 1fr) !important; /* بطاقتان في الصف على الشاشات المحمولة */
   }
 
   .service-card, .language, .feature, .article-card {
@@ -357,6 +361,10 @@ body {
     width: 50px;
     height: 50px;
     font-size: 1.2rem;
+  }
+
+  .languages-grid {
+    grid-template-columns: repeat(2, 1fr); /* الاحتفاظ ببطاقتين في الصف */
   }
 }
 

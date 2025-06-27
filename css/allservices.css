@@ -60,6 +60,7 @@ body {
   overflow: hidden;
   transition: var(--transition-normal);
   will-change: transform, box-shadow;
+  height: 27rem;
 }
 
 .feature-item:hover {
