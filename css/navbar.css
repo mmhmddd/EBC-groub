@@ -4,7 +4,7 @@
   --ebc-teal: #14B8A6;
   --ebc-gray: #6B7280;
   --ebc-light: #F9FAFB;
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
   --transition-normal: all 0.3s ease;
   --ebc-light-green: rgb(110, 196, 186);
 }
@@ -13,77 +13,86 @@
 .navbar {
   direction: rtl;
   box-shadow: var(--shadow-sm);
-  padding: 0.5rem 1rem; /* Reduced padding for smaller height */
+  padding: 0.75rem 1.5rem;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
   background-color: var(--ebc-light);
+  transition: var(--transition-normal);
 }
 
 /* Brand styling */
 .navbar-brand {
   color: var(--ebc-blue);
-  font-weight: 600;
+  font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
+  text-decoration: none;
 }
 
 .navbar-brand img {
-  height: 35px; /* Smaller logo for compact navbar */
-  margin-right: 0.5rem;
+  height: 40px;
+  margin-right: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.05);
 }
 
 .navbar-brand span p {
   font-weight: 700;
   margin: 0;
   color: var(--ebc-blue);
-  font-size: 1rem; /* Further reduced font size */
+  font-size: 1.1rem;
 }
 
 /* Login button */
 .log-btn {
-  background-color: var(--ebc-teal) !important;
-  height: 2rem; /* Smaller button height */
-  padding: 0.4rem 0.8rem; /* Reduced padding */
-  border-radius: 7px;
+  background-color: var(--ebc-teal);
+  height: 2.25rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
   text-decoration: none;
   color: white;
-  font-size: 0.85rem; /* Smaller text */
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: var(--transition-normal);
 }
 
 .log-btn:hover {
-  opacity: 0.9;
-  color: white;
   background-color: var(--ebc-light-green);
+  transform: translateY(-1px);
 }
 
 /* Navbar navigation */
 .navbar-nav {
   display: flex;
-  gap: 1.2rem; /* Slightly reduced gap */
+  gap: 1.5rem;
+  align-items: center;
 }
 
 /* Nav links */
 .navbar-nav .nav-link {
   color: var(--ebc-gray);
   font-weight: 500;
-  padding: 0.4rem 0; /* Reduced padding */
+  padding: 0.5rem 0.75rem;
   transition: var(--transition-normal);
   position: relative;
-  font-size: 0.9rem; /* Smaller font */
+  font-size: 0.95rem;
+  text-decoration: none;
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link:focus {
   color: var(--ebc-light);
   background-color: var(--ebc-light-green);
-  border-radius: 7px;
+  border-radius: 8px;
 }
 
 .navbar-nav .nav-link::after {
@@ -91,7 +100,7 @@
   position: absolute;
   width: 0;
   height: 2px;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
   background-color: var(--ebc-teal);
   transition: width 0.3s ease;
@@ -106,7 +115,7 @@
 .navbar-nav .nav-link.active {
   color: var(--ebc-light);
   background-color: var(--ebc-teal);
-  border-radius: 7px;
+  border-radius: 8px;
 }
 
 /* Dropdown toggle */
@@ -120,20 +129,21 @@
 .dropdown-menu {
   right: 0;
   left: auto;
-  min-width: 12rem;
+  min-width: 14rem;
   border: none;
   box-shadow: var(--shadow-sm);
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(8px);
   visibility: hidden;
   transition: opacity 0.3s ease, transform 0.3s ease;
   position: absolute;
   z-index: 1000;
   background-color: var(--ebc-light);
+  border-radius: 8px;
+  padding: 0.5rem 0;
 }
 
 .dropdown:hover .dropdown-menu {
-  display: block;
   opacity: 1;
   transform: translateY(0);
   visibility: visible;
@@ -141,8 +151,8 @@
 
 .dropdown-item {
   color: var(--ebc-gray);
-  font-size: 0.95rem; /* Smaller font for mobile */
-  padding: 0.6rem 1rem; /* Reduced padding */
+  font-size: 0.9rem;
+  padding: 0.5rem 1.25rem;
   transition: var(--transition-normal);
   font-weight: 400;
 }
@@ -167,27 +177,42 @@
 /* Mobile-specific styles */
 @media (max-width: 991px) {
   .navbar {
-    padding: 0.4rem 0.8rem; /* Further reduced padding */
+    padding: 0.5rem 1rem;
+  }
+
+  .d-flex.w-100 {
+    flex-direction: row-reverse; /* Ensure logo on right, toggle on left */
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    order: 2; /* Logo on right (visually left in RTL) */
+  }
+
+  .navbar-toggler {
+    order: 1; /* Toggle on left (visually right in RTL) */
   }
 
   .navbar-collapse {
     text-align: center;
     background-color: var(--ebc-light);
-    margin-top: 0.3rem; /* Reduced margin */
-    padding: 0.5rem; /* Reduced padding for collapse */
+    margin-top: 0.5rem;
+    padding: 1rem;
     border-radius: 8px;
     box-shadow: var(--shadow-sm);
-    max-height: calc(100vh - 50px); /* Prevent collapse from taking full screen */
-    overflow-y: auto; /* Allow scrolling if content is too long */
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    transition: var(--transition-normal);
   }
 
   .navbar-nav {
     flex-direction: column;
-    gap: 0.6rem; /* Tighter gap */
+    gap: 0.75rem;
   }
 
   .navbar-nav .nav-item {
-    margin-bottom: 0.2rem; /* Reduced margin */
+    margin-bottom: 0.3rem;
   }
 
   .log-btn.d-none.d-lg-block {
@@ -196,78 +221,90 @@
 
   .log-btn.d-lg-none {
     display: block;
-    width: 90%; /* Slightly wider for balance */
-    margin: 0.8rem auto; /* Reduced margin */
-    padding: 0.6rem;
-    font-size: 0.95rem;
+    width: 80%;
+    margin: 1rem auto;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
   }
 
   .navbar-nav .nav-link {
-    font-size: 0.95rem; /* Adjusted for touch */
-    padding: 0.6rem 0; /* Reduced padding */
+    font-size: 0.95rem;
+    padding: 0.75rem 0;
   }
 
   .navbar-nav .nav-link::after {
-    display: none; /* Remove underline effect */
+    display: none;
   }
 
   .navbar-nav .dropdown-toggle.nav-link::after {
-    font-size: 0.85rem; /* Smaller arrow */
-    transform: scale(1);
-  }
-
-  .navbar-nav .dropdown-toggle.nav-link:hover::after,
-  .navbar-nav .dropdown-toggle.nav-link:focus::after {
-    transform: scale(1) rotate(180deg);
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
   }
 
   .dropdown-menu {
     position: static;
     width: 100%;
     box-shadow: none;
-    transform: none;
+    background-color: rgba(20, 184, 166, 0.05);
+    border-radius: 6px;
+    padding: 0.75rem 0;
     opacity: 1;
     visibility: visible;
+    transform: none;
     transition: none;
-  }
-
-  .dropdown:hover .dropdown-menu {
-    display: none;
+    display: none; /* Hidden by default */
   }
 
   .dropdown.show .dropdown-menu {
-    display: block;
+    display: block; /* Show when toggled */
+  }
+
+  .dropdown-item {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(20, 184, 166, 0.1);
+    transition: background-color 0.2s ease;
+  }
+
+  .dropdown-item:last-child {
+    border-bottom: none;
+  }
+
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    background-color: rgba(20, 184, 166, 0.2);
   }
 }
 
 /* ===== تحسين زر الهامبرغر ===== */
 .navbar-toggler {
   border: none;
-  padding: 0.4rem; /* Reduced padding */
-  font-size: 1.2rem; /* Smaller icon */
+  padding: 0.5rem;
+  font-size: 1.25rem;
   color: var(--ebc-blue);
   background-color: transparent;
   transition: var(--transition-normal);
+  margin-top: -3.5rem;
 }
 
 .navbar-toggler:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.2);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.3);
 }
 
 /* Body padding to prevent content overlap */
 body {
-  padding-top: 50px; /* Reduced to match smaller navbar height */
+  padding-top: 60px;
 }
 
 /* Dropdown toggle arrow */
 .dropdown-toggle::after {
   content: "";
-  border-top: 0.35rem solid; /* Smaller arrow */
-  border-right: 0.35rem solid transparent;
+  border-top: 0.4rem solid;
+  border-right: 0.4rem solid transparent;
   border-bottom: 0;
-  border-left: 0.35rem solid transparent;
-  background-color: transparent !important;
+  border-left: 0.4rem solid transparent;
   transition: var(--transition-normal);
 }
 
