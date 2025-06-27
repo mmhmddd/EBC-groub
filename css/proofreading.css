@@ -1,3 +1,4 @@
+/* Root Variables Scope */
 :root {
   --bg-gradient-start: #1E3A8A;
   --bg-gradient-end: #14B8A6;
@@ -11,6 +12,7 @@
   --transition-normal: all 0.4s ease;
 }
 
+/* Body Scope */
 body {
   font-family: 'Tajawal', sans-serif;
   background: #fff;
@@ -20,6 +22,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Header Scope */
 .header {
   background: linear-gradient(45deg, var(--bg-gradient-start), var(--bg-gradient-end));
   padding: 2rem 2rem;
@@ -36,7 +39,8 @@ body {
   font-weight: 700;
   animation: bounceIn 1.5s ease-out;
 }
-/* Hero Section */
+
+/* Hero Section Scope */
 .service-hero {
   display: flex;
   align-items: center;
@@ -48,6 +52,7 @@ body {
   position: relative;
   overflow: hidden;
 }
+
 .service-hero::before {
   content: '';
   position: absolute;
@@ -60,6 +65,7 @@ body {
   z-index: 0;
   animation: pulse 5s infinite ease-in-out;
 }
+
 .service-hero::after {
   content: '';
   position: absolute;
@@ -77,6 +83,7 @@ body {
   flex: 1;
   margin-right: 2rem;
 }
+
 .service-hero-image img {
   max-width: 500px;
   height: auto;
@@ -104,49 +111,124 @@ body {
   line-height: 1.5;
 }
 
+/* Button Styles Scope */
 .btn-contact-hero {
   padding: 12px 25px;
   font-size: 1.1rem;
-  background-color: blue; /* Blue background */
-  color: #fff; /* White text for contrast */
+  border: none;
   border-radius: 15px;
-  text-decoration: none; /* Remove underline */
-  display: inline-block; /* Ensure block-like behavior */
-  width: 200px; /* Fixed width */
-  text-align: center; /* Center text */
-  border: none; /* Remove default border */
-  cursor: pointer; /* Indicate clickable */
-  transition: background-color 0.3s ease; /* Smooth transition */
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: red;
+  color: #fff;
+  width: 200px;
 }
 
 .btn-contact-hero:hover {
-  background-color: darkblue; /* Darker blue on hover */
+  background-color: darkblue;
   color: #fff;
 }
 
-/* Ensure no default link styles interfere */
-.btn-contact-hero:link,
-.btn-contact-hero:visited,
-.btn-contact-hero:active {
-  color: #fff;
+.btn {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 15px;
   text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--ebc-light);
+  color: var(--ebc-blue);
 }
-/* Service Description */
+
+.btn:hover {
+  background-color: #e5e7eb;
+  color: var(--ebc-blue);
+}
+
+.btn-large {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 15px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #1E3A8A;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+}
+
+.btn-large:hover {
+  background-color: #163a7a;
+  color: #fff;
+}
+
+.btn-contact {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 15px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--ebc-light);
+  color: var(--ebc-blue);
+}
+
+.btn-contact:hover {
+  background-color: #e5e7eb;
+  color: var(--ebc-blue);
+}
+
+.btn-sell-all {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 15px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--bg-gradient-end);
+  color: var(--ebc-blue);
+  padding: 8px 15px;
+  font-size: 0.9rem;
+}
+
+.btn-sell-all:hover {
+  background-color: #0f937e;
+  color: #fff;
+}
+
+/* Service Description Scope */
 .service-description {
   padding: 4rem 0;
   background-color: #fff;
 }
 
 .service-description h2 {
-  text-align: center; 
+  text-align: center;
 }
+
 .service-description p {
-  text-align: center; 
+  text-align: center;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -174,7 +256,7 @@ body {
   color: #1E3A8A;
 }
 
-/* Why Choose Us */
+/* Why Choose Us Scope */
 .why-choose-us {
   padding: 4rem 0;
   background-color: #E0F2F7;
@@ -183,7 +265,7 @@ body {
 }
 
 .why-choose-us h2 {
-  text-align: center; /* Centered title */
+  text-align: center;
 }
 
 .why-choose-us::before {
@@ -216,7 +298,7 @@ body {
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 2rem;
   position: relative;
@@ -260,19 +342,19 @@ body {
   font-size: 1rem;
 }
 
-/* Related Articles */
+/* Related Articles Scope */
 .related-articles {
   padding: 4rem 0;
   background-color: #fff;
 }
 
 .related-articles h2 {
-  text-align: center; /* Centered title */
+  text-align: center;
 }
 
 .articles-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -319,19 +401,8 @@ body {
   text-align: center;
   margin-top: 2rem;
 }
-.btn-sell-all{
-    display: inline-block;
-  padding: 8px 15px;
-  font-size: 0.9rem;
-  color: var(--ebc-blue);
-  text-decoration: underline;
-  transition: var(--transition-normal);
-  background-color: var(--bg-gradient-end);
-  border-radius: 12px;
-  text-decoration: none;
-}
 
-/* Call to Action */
+/* Call to Action Scope */
 .cta {
   padding: 4rem 0;
   background-color: #14B8A6;
@@ -342,26 +413,14 @@ body {
 .cta h2 {
   color: #fff;
   margin-bottom: 1rem;
-  text-align: center; /* Centered title */
 }
 
 .cta p {
   max-width: 600px;
   margin: 0 auto 1.5rem;
 }
-.btn-contact{
-  padding: 12px 25px;
-  font-size: 1.1rem;
-  background-color: var(--ebc-light);
-    color: var(--ebc-blue);
-    border-radius: 15px;
-    text-decoration: none;
-}
-.btn-large{
-  background-color: #1E3A8A !important;
-}
 
-/* Animations */
+/* Animations Scope */
 @keyframes pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.1); }
@@ -395,28 +454,39 @@ body {
   100% { transform: translate(0, 0) rotate(45deg); }
 }
 
-/* Responsive Design */
+/* Responsive Design Scope */
 @media (max-width: 768px) {
   .service-hero {
     flex-direction: column;
     text-align: center;
     padding: 2rem 0;
   }
+
   .service-hero-image {
     margin-right: 0;
     margin-bottom: 1.5rem;
   }
+
   .service-hero-content {
     max-width: 100%;
   }
+
   .service-hero-content h1 {
     font-size: 2rem;
   }
+
   .service-hero-content p {
     font-size: 1rem;
   }
-  .services-grid, .features-grid, .articles-grid {
+
+  .services-grid,
+  .features-grid,
+  .articles-grid {
     grid-template-columns: 1fr;
   }
-  .btn-large { padding: 0.75rem 1.5rem; font-size: 1rem; }
+
+  .btn-large {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
 }

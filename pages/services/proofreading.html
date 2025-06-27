@@ -24,7 +24,15 @@
         <div class="service-hero-content">
             <h1>خدمة التدقيق اللغوي</h1>
             <p>نقدم خدمات احترافية في التدقيق اللغوي والتحرير للمحتوى العربي والإنجليزي بأعلى معايير الجودة</p>
-            <a href="../contact.html" class="btn-contact-hero" aria-label="تواصل معنا للحصول على خدمة التدقيق اللغوي">تواصل معنا الآن</a>
+            <button
+            class="btn-contact-hero"
+            style="border: none; background-color: #14B8A6; padding: 12px; border-radius: 12px; color: white; cursor: pointer;"
+            onmouseover="this.style.backgroundColor='#1E3A8A'"
+            onmouseout="this.style.backgroundColor='#14B8A6'"
+            aria-label="تواصل معنا للحصول على خدمة التدقيق اللغوي"
+            >
+            تواصل معنا الآن
+            </button>
         </div>
     </section>
 
@@ -180,7 +188,15 @@
         <div class="container">
             <h2>هل تحتاج إلى خدمة التدقيق اللغوي؟</h2>
             <p>تواصل معنا الآن للحصول على استشارة مجانية وعرض سعر مخصص لمشروعك</p>
-            <a href="../contact.html" class="btn btn-large" aria-label="تواصل معنا للحصول على استشارة مجانية حول التدقيق اللغوي">تواصل معنا الآن</a>
+<button
+  class="btn btn-large"
+  aria-label="تواصل معنا للحصول على استشارة مجانية حول التدقيق اللغوي"
+  style="background-color: #1E3A8A; color: white; padding: 12px 20px; border: none; border-radius: 12px; cursor: pointer; font-size: 16px;"
+    onmouseover="this.style.backgroundColor='#14B8A6'"
+    onmouseout="this.style.backgroundColor='#1E3A8A'"
+>
+  تواصل معنا الآن
+</button>
         </div>
     </section>
 </main>
@@ -188,6 +204,16 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+  // Function to navigate to contact page
+  document.querySelector('.btn-contact-hero').addEventListener('click', function() {
+    window.location.href = '../contact.html';
+  });
+
+  // Function to navigate to contact page for CTA button
+  document.querySelector('.cta .btn-large').addEventListener('click', function() {
+    window.location.href = '../contact.html';
+  });
+
   fetch('../../shared/navbar/navbar.html')
     .then(response => response.text())
     .then(data => {
