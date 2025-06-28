@@ -72,3 +72,5 @@
       // Initialize slider
       updateSlider();
     });
+
+    

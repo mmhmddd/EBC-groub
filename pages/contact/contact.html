@@ -7,282 +7,194 @@
   <meta name="description" content="تواصل مع شركة EBC للحصول على استشارة مجانية أو الاستفسار عن خدماتنا في التحليل الإحصائي، الترجمة، التدريب، والتدقيق اللغوي.">
   <meta name="keywords" content="تواصل معنا, شركة EBC, استشارة مجانية, خدمات EBC, الاتصال بنا">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <style>
-    :root {
-      --primary-color: #1E3A8A;
-      --secondary-color: #14B8A6;
-      --accent-color: #F59E0B;
-      --light-bg: #F9FAFB;
-      --text-gray: #4B5563;
-    }
-    body {
-      font-family: 'Tajawal', sans-serif;
-      background: var(--light-bg);
-      direction: rtl;
-      color: var(--text-gray);
-    }
-    .header-section {
-      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      color: white;
-      padding: 60px 0;
-      border-radius: 0 0 20px 20px;
-      text-align: center;
-    }
-    .header-section h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-    }
-    .header-section p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 10px auto;
-    }
-    .contact-card {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 30px;
-      margin-bottom: 30px;
-    }
-    .contact-card h3 {
-      color: var(--primary-color);
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-    }
-    .contact-card p {
-      margin: 10px 0;
-    }
-    .form-section {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 30px;
-    }
-    .form-section .form-label {
-      font-weight: 500;
-      color: var(--primary-color);
-    }
-    .form-control:focus {
-      border-color: var(--secondary-color);
-      box-shadow: 0 0 5px rgba(20, 184, 166, 0.5);
-    }
-    .btn-submit {
-      background: var(--accent-color);
-      color: white;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 25px;
-      transition: transform 0.3s, background 0.3s;
-    }
-    .btn-submit:hover {
-      background: #d97706;
-      transform: translateY(-2px);
-    }
-    .whatsapp-btn {
-      background: #25D366;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 25px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: transform 0.3s, background 0.3s;
-    }
-    .whatsapp-btn:hover {
-      background: #1DAF5D;
-      transform: translateY(-2px);
-    }
-    .map-placeholder {
-      height: 200px;
-      background: #E0F2F7;
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    @media (max-width: 768px) {
-      .header-section h1 {
-        font-size: 2rem;
-      }
-      .header-section p {
-        font-size: 1rem;
-      }
-      .contact-card, .form-section {
-        padding: 20px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/css/contact.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/footer.css">
 </head>
 <body>
   <div id="navbar-placeholder"></div>
-  <main class="main-content py-5">
-    <section class="header-section">
+  <main class="main-content">
+  <section class="contact-hero">
+  <div class="container">
+    <h1>تواصل معنا</h1>
+    <p>نحن هنا لتقديم الدعم ومساعدتك في جميع احتياجاتك. تواصل الآن للحصول على استشارة مجانية!</p>
+  </div>
+</section>
+
+<section class="contact-details">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card p-4 text-center">
+          <i class="fas fa-envelope"></i>
+          <h4>البريد الإلكتروني</h4>
+          <p><a href="mailto:info@ebcgroub.com">info@ebcgroub.com</a></p>
+          <p><a href="mailto:economicbusinesscompany@gmail.com">economicbusinesscompany@gmail.com</a></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4 text-center">
+          <i class="fas fa-phone"></i>
+          <h4>الهاتف / واتساب</h4>
+          <p><a href="https://wa.me/201153480793" target="_blank" rel="noopener noreferrer" style="direction: ltr; unicode-bidi: embed;">+20 11 5348 0793</a></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4 text-center">
+          <i class="fas fa-clock"></i>
+          <h4>ساعات العمل</h4>
+          <p>الأحد - الخميس: 9:00 ص - 5:00 م</p>
+          <p>الجمعة - السبت: مغلق</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="contact-form py-5">
       <div class="container">
-        <h1>تواصل معنا</h1>
-        <p>نحن هنا لدعمك في جميع احتياجاتك! تواصل معنا اليوم للحصول على استشارة مجانية أو لمعرفة المزيد عن خدماتنا.</p>
+        <h2 class="text-center mb-4">أرسل لنا رسالة</h2>
+        <form id="contact-form" class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="name" class="form-label">الاسم *</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+              <div class="invalid-feedback">يرجى إدخال الاسم.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label">البريد الإلكتروني *</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+              <div class="invalid-feedback">يرجى إدخال بريد إلكتروني صالح.</div>
+            </div>
+            <div class="col-12">
+              <label for="phone" class="form-label">رقم الهاتف</label>
+              <input type="tel" class="form-control" id="phone" name="phone">
+            </div>
+            <div class="col-12">
+              <label for="service" class="form-label">الخدمة المطلوبة</label>
+              <select class="form-control" id="service" name="service">
+                <option value="">اختر الخدمة</option>
+                <option value="statistical-analysis">التحليل الإحصائي والقياسي والمالي</option>
+                <option value="translation">خدمات الترجمة المعتمدة</option>
+                <option value="training-packages">إعداد الحقائب التدريبية</option>
+                <option value="proofreading">التدقيق اللغوي</option>
+                <option value="other">أخرى</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label for="message" class="form-label">الرسالة *</label>
+              <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+              <div class="invalid-feedback">يرجى إدخال الرسالة.</div>
+            </div>
+            <div class="col-12 text-center">
+              <button type="submit" class="btn-submit">إرسال الرسالة</button>
+              <div id="form-status" class="mt-2" style="display: none;"></div>
+            </div>
+          </div>
+        </form>
       </div>
     </section>
 
-    <section class="container my-5">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="contact-card">
-            <h3>معلومات الشركة</h3>
-            <p><strong>الاسم:</strong> شركة EBC للخدمات الاحترافية</p>
-            <p><strong>العنوان:</strong> الرياض، المملكة العربية السعودية</p>
-            <p><strong>البريد الإلكتروني:</strong> info@ebcgroup.com</p>
-            <p><strong>الهاتف:</strong> +966 555 123 456</p>
-            <p><strong>ساعات العمل:</strong> 9:00 ص - 6:00 م (يوميًا)</p>
-          </div>
+    <section class="map-section">
+      <div class="container">
+        <h2 class="text-center mb-4">موقعنا</h2>
+        <p class="text-center mb-4">زورونا في مقر الشركة خلال ساعات العمل. <a href="https://www.google.com/maps?q=24.71355168410286,46.67529561500086" target="_blank" rel="noopener noreferrer" style="color: var(--secondary-teal);">افتح في خرائط Google</a></p>
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.116886844975!2d46.67529561500086!3d24.71355168410286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f038d5a9a7f9b%3A0x5f0b8f0b8f0b8f0b!2sRiyadh%2C%20Saudi%20Arabia!5e0!3m2!1sen!2sus!4v1678886400000!5m2!1sen!2sus" height="400" style="border:0; border-radius: 10px; width: 100%;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" title="موقع الشركة على خرائط جوجل"></iframe>
         </div>
-        <div class="col-md-8">
-          <div class="contact-card">
-            <h3>موقعنا</h3>
-            <div class="map-placeholder">
-              <p>خريطة تفاعلية (يمكنك إضافة رابط Google Maps لاحقًا)</p>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="container">
+        <h2 class="text-center mb-4">الأسئلة الشائعة</h2>
+        <div class="faq-container">
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  ما هي مدة تنفيذ خدمات التحليل الإحصائي؟
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  تعتمد مدة التنفيذ على حجم البيانات وتعقيدها. نحدد الوقت بعد مناقشة متطلباتك.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  هل تقدمون ترجمة لجميع اللغات؟
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  نقدم ترجمة للغات متعددة. تواصل معنا لتأكيد اللغة المطلوبة.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  كيف أطلب حقيبة تدريبية؟
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  املأ النموذج أو اتصل بنا لتحديد احتياجاتك، وسنصممها حسب طلبك.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  ما الفرق بين التدقيق والتحرير؟
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  التدقيق يركز على الأخطاء النحوية، بينما التحرير يحسن الأسلوب والوضوح.
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="form-section container mb-5">
-      <h2 class="text-center mb-4" style="color: var(--primary-color);">أرسل لنا رسالتك</h2>
-      <form id="contactForm" class="needs-validation" novalidate>
-        <div class="row g-3">
-          <div class="col-md-6">
-            <label for="name" class="form-label">الاسم الكامل *</label>
-            <input type="text" class="form-control" id="name" name="name" required>
-            <div class="invalid-feedback">يرجى إدخال الاسم الكامل (حروف فقط).</div>
-          </div>
-          <div class="col-md-6">
-            <label for="email" class="form-label">البريد الإلكتروني *</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-            <div class="invalid-feedback">يرجى إدخال بريد إلكتروني صالح.</div>
-          </div>
-          <div class="col-12">
-            <label for="subject" class="form-label">الموضوع *</label>
-            <input type="text" class="form-control" id="subject" name="subject" required>
-            <div class="invalid-feedback">يرجى إدخال الموضوع.</div>
-          </div>
-          <div class="col-12">
-            <label for="message" class="form-label">الرسالة *</label>
-            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-            <div class="invalid-feedback">يرجى إدخال الرسالة.</div>
-          </div>
-          <div class="col-12 text-center">
-            <button type="submit" class="btn-submit">إرسال الرسالة</button>
-            <div id="formFeedback" class="mt-2" style="display: none;"></div>
-          </div>
-        </div>
-      </form>
-    </section>
-
-    <section class="container mb-5">
-      <div class="text-center">
-        <h2 style="color: var(--primary-color);">تواصل معنا بسهولة</h2>
-        <a href="https://wa.me/966555123456" class="whatsapp-btn mb-3" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
-        </a>
-        <div class="mt-3">
-          <a href="#" class="text-decoration-none text-dark me-3"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="text-decoration-none text-dark me-3"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="text-decoration-none text-dark"><i class="fab fa-linkedin-in"></i></a>
-        </div>
+    <section class="py-5 text-center">
+      <h2 class="mb-3">تابعنا</h2>
+      <div class="social-links">
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
       </div>
     </section>
   </main>
   <div id="footer-placeholder"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Form validation and submission with Formspree
-    (function() {
-      'use strict';
-      const form = document.getElementById('contactForm');
-      const feedback = document.getElementById('formFeedback');
-      const formspreeEndpoint = 'https://formspree.io/f/manjabbr';
-
-      form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        if (!validateForm()) {
-          form.classList.add('was-validated');
-          feedback.style.display = 'block';
-          feedback.className = 'mt-2 text-danger';
-          feedback.textContent = 'يرجى تصحيح الأخطاء في النموذج.';
-          setTimeout(() => feedback.style.display = 'none', 5000);
-          return;
-        }
-
-        const formData = new FormData(form);
-
-        fetch(formspreeEndpoint, {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        })
-        .then(response => {
-          if (response.ok) {
-            return response.json();
-          } else {
-            throw new Error(`فشل الإرسال: ${response.statusText}`);
-          }
-        })
-        .then(data => {
-          feedback.style.display = 'block';
-          feedback.className = 'mt-2 text-success';
-          feedback.textContent = 'تم إرسال الرسالة بنجاح!';
-          form.reset();
-        })
-        .catch(error => {
-          feedback.style.display = 'block';
-          feedback.className = 'mt-2 text-danger';
-          feedback.textContent = 'حدث خطأ أثناء الإرسال: ' + error.message;
-          console.error('خطأ مفصل:', error);
-        })
-        .finally(() => {
-          setTimeout(() => feedback.style.display = 'none', 5000);
-          form.classList.remove('was-validated');
-        });
-      });
-
-      function validateForm() {
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const subject = document.getElementById('subject').value.trim();
-        const message = document.getElementById('message').value.trim();
-
-        if (!/^[أ-يa-zA-Z\s]+$/.test(name)) return false;
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return false;
-        if (subject.length < 3) return false;
-        if (message.length < 10) return false;
-
-        return true;
-      }
-    })();
-  </script>
+  <script src="/js/contact.js"></script>
+  <script src="/js/navigation.js"></script>
   <script>
     fetch('../../shared/navbar/navbar.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('navbar-placeholder').innerHTML = data;
-      })
-      .catch(error => console.error('خطأ في تحميل الناف بار:', error));
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('navbar-placeholder').innerHTML = data;
+  })
+  .catch(error => console.error('خطأ في تحميل الناف بار:', error));
 
-    fetch('../../shared/footer/footer.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('footer-placeholder').innerHTML = data;
-      })
-      .catch(error => console.error('خطأ في تحميل footer:', error));
+fetch('../../shared/footer/footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer-placeholder').innerHTML = data;
+  })
+  .catch(error => console.error('خطأ في تحميل footer:', error));
   </script>
 </body>
 </html>

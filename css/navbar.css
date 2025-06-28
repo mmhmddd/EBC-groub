@@ -90,10 +90,29 @@
 .dropdown-toggle {
   color: var(--ebc-gray);
   padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
 }
 
 .dropdown-toggle:hover {
   color: var(--ebc-blue);
+}
+
+.dropdown-toggle::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 0.5rem; /* مسافة بين النص والسهم */
+  vertical-align: middle;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid var(--ebc-gray); /* سهم افتراضي */
+  transition: var(--transition-normal);
+}
+
+.dropdown-toggle:hover::after {
+  border-top-color: var(--ebc-blue); /* تغيير لون السهم عند التمرير */
 }
 
 .dropdown-menu {
@@ -224,6 +243,15 @@
 
   .btn-collapse {
     display: block;
+  }
+
+  .dropdown-toggle::after {
+    border-top: 5px solid var(--ebc-gray); /* تقليل حجم السهم في الشاشات الصغيرة */
+    margin-left: 0.3rem; /* تقليل المسافة */
+  }
+
+  .dropdown-toggle:hover::after {
+    border-top-color: var(--ebc-blue);
   }
 }
 

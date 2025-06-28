@@ -1081,3 +1081,18 @@ main {
         font-size: 0.9rem;
       }
     }
+
+    .btn-all-services{
+        background-color: var(--light-teal);
+        color: white;
+        padding: 0.5rem 2.5rem;
+        border: none;
+        border-radius: 7px;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+        margin: 24px;
+        display: flex;
+        justify-self: center;
+    }

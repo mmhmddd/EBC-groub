@@ -61,7 +61,7 @@
 }
 
 .social-link {
-  color: var(--ebc-light);
+  color: var(--ebc-light) !important;
   margin-right: 10px;
   font-size: 1.2rem;
   display: inline-block;
