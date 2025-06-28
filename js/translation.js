@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'ru': '/assets/images/services/language-flag/russia.jpg',
     'cn': '/assets/images/services/language-flag/chiness.jpg',
     'jp': '/assets/images/services/language-flag/japan.jpg',
-    'kr': '/assets/images/services/language-flag/korea.jpg',
+    'kr': '/assets/images/services/language-flag/koria.jpg',
     'tr': '/assets/images/services/language-flag/turkey.jpg',
     'ir': '/assets/images/services/language-flag/farsya.jpg'
   };

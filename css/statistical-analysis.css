@@ -18,6 +18,8 @@ body {
   padding: 0;
   color: var(--text-gray);
   overflow-x: hidden;
+  direction: rtl;
+  text-align: right;
 }
 
 .header {
@@ -47,8 +49,8 @@ body {
   margin-bottom: 2rem;
   position: relative;
   overflow: hidden;
+  direction: rtl;
 }
-
 .service-hero::before {
   content: '';
   position: absolute;
@@ -61,7 +63,6 @@ body {
   z-index: 0;
   animation: pulse 5s infinite ease-in-out;
 }
-
 .service-hero::after {
   content: '';
   position: absolute;
@@ -119,6 +120,10 @@ body {
   line-height: 1.5;
 }
 
+.service-hero-content .mixed-text {
+  unicode-bidi: plaintext;
+}
+
 .service-hero-image {
   position: relative;
   z-index: 1;
@@ -130,7 +135,6 @@ body {
   border-radius: 10px;
   box-shadow: var(--shadow-md);
   animation: fadeInLeft 1s ease-out;
-    box-shadow: var(--shadow-soft);
   border: 15px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -157,15 +161,17 @@ body {
   background: #fff;
   margin-bottom: 2rem;
   border-radius: 10px;
+  direction: rtl;
 }
-.why-choose-us{
-    padding: 3rem 2rem;
-    background: var(--bg-gradient-start);
-    margin-bottom: 2rem;
+.why-choose-us {
+  padding: 3rem 2rem;
+  background: var(--bg-gradient-start);
+  margin-bottom: 2rem;
+  direction: rtl;
 }
-.why-choose-us h2{
-    color: white;
-      font-size: 2rem;
+.why-choose-us h2 {
+  color: white;
+  font-size: 2rem;
   margin-bottom: 1.5rem;
   text-align: center;
   animation: fadeInUp 1s ease-out;
@@ -188,9 +194,14 @@ body {
   text-align: center;
 }
 
+.service-description .mixed-text,
+.related-articles .mixed-text {
+  unicode-bidi: plaintext;
+}
+
 .services-grid, .features-grid, .articles-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 بطاقات في الصف */
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-top: 1rem;
 }
@@ -214,7 +225,7 @@ body {
 .service-icon, .feature-icon {
   font-size: 2rem;
   color: var(--secondary-teal);
-  margin-left: 1rem; /* مسافة بين النص والأيقونة */
+  margin-left: 1rem;
 }
 
 .service-card-content, .feature-content, .article-content {
@@ -248,7 +259,7 @@ body {
 }
 
 .article-image {
-  margin-bottom: 1rem;
+  margin: 1rem;
 }
 
 .article-image img {
@@ -263,6 +274,7 @@ body {
   background-color: #14B8A6;
   color: #fff;
   text-align: center;
+  direction: rtl;
 }
 
 .cta p {
@@ -274,12 +286,11 @@ body {
   padding: 12px 25px;
   font-size: 1.1rem;
   background-color: var(--ebc-light);
-    color: var(--ebc-blue);
-
+  color: var(--ebc-blue);
 }
 
-.btn-sell-all{
-      display: inline-block;
+.btn-sell-all {
+  display: inline-block;
   padding: 12px 15px;
   font-size: 0.9rem;
   color: var(--ebc-blue);
@@ -336,7 +347,7 @@ body {
 /* ===== استجابة ===== */
 @media (max-width: 1024px) {
   .services-grid, .features-grid, .articles-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 بطاقات في الصف على شاشات متوسطة */
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .service-hero {
@@ -390,7 +401,7 @@ body {
   }
 
   .services-grid, .features-grid, .articles-grid {
-    grid-template-columns: 1fr; /* بطاقة واحدة في الصف على شاشات صغيرة */
+    grid-template-columns: 1fr;
   }
 
   .service-card, .feature, .article-card {

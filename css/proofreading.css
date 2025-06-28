@@ -20,6 +20,8 @@ body {
   padding: 0;
   color: var(--text-gray);
   overflow-x: hidden;
+  direction: rtl;
+  text-align: right;
 }
 
 /* Header Scope */
@@ -51,6 +53,7 @@ body {
   margin-bottom: 2rem;
   position: relative;
   overflow: hidden;
+  direction: rtl;
 }
 
 .service-hero::before {
@@ -112,110 +115,51 @@ body {
 }
 
 /* Button Styles Scope */
-.btn-contact-hero {
-  padding: 12px 25px;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 15px;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  background-color: red;
-  color: #fff;
-  width: 200px;
-}
-
-.btn-contact-hero:hover {
-  background-color: darkblue;
-  color: #fff;
-}
-
 .btn {
+  display: inline-block;
   padding: 12px 25px;
   font-size: 1.1rem;
   border: none;
   border-radius: 15px;
   text-decoration: none;
-  display: inline-block;
   text-align: center;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  background-color: var(--ebc-light);
-  color: var(--ebc-blue);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-md);
 }
 
-.btn:hover {
-  background-color: #e5e7eb;
-  color: var(--ebc-blue);
+.btn-primary {
+  background-color: var(--ebc-blue);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #163a7a;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background-color: var(--light-teal);
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #4da596;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 .btn-large {
-  padding: 12px 25px;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 15px;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  background-color: #1E3A8A;
-  color: #fff;
   padding: 15px 30px;
   font-size: 1.2rem;
-}
-
-.btn-large:hover {
-  background-color: #163a7a;
-  color: #fff;
-}
-
-.btn-contact {
-  padding: 12px 25px;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 15px;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  background-color: var(--ebc-light);
-  color: var(--ebc-blue);
-}
-
-.btn-contact:hover {
-  background-color: #e5e7eb;
-  color: var(--ebc-blue);
-}
-
-.btn-sell-all {
-  padding: 12px 25px;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 15px;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  background-color: var(--bg-gradient-end);
-  color: var(--ebc-blue);
-  padding: 8px 15px;
-  font-size: 0.9rem;
-}
-
-.btn-sell-all:hover {
-  background-color: #0f937e;
-  color: #fff;
 }
 
 /* Service Description Scope */
 .service-description {
   padding: 4rem 0;
   background-color: #fff;
+  direction: rtl;
 }
 
 .service-description h2 {
@@ -262,6 +206,7 @@ body {
   background-color: #E0F2F7;
   position: relative;
   overflow: hidden;
+  direction: rtl;
 }
 
 .why-choose-us h2 {
@@ -346,6 +291,7 @@ body {
 .related-articles {
   padding: 4rem 0;
   background-color: #fff;
+  direction: rtl;
 }
 
 .related-articles h2 {
@@ -408,6 +354,7 @@ body {
   background-color: #14B8A6;
   color: #fff;
   text-align: center;
+  direction: rtl;
 }
 
 .cta h2 {

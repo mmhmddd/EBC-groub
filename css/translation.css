@@ -149,6 +149,7 @@ body {
 
 .service-card-content, .language-content, .feature-content, .article-content {
   flex: 1;
+  margin: 18px;
 }
 
 .service-card h3, .language h3, .feature h3, .article-card h3 {

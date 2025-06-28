@@ -1,3 +1,4 @@
+/* Root Variables Scope */
 :root {
   --bg-gradient-start: #1E3A8A;
   --bg-gradient-end: #14B8A6;
@@ -11,6 +12,7 @@
   --transition-normal: all 0.4s ease;
 }
 
+/* Body Scope */
 body {
   font-family: 'Tajawal', sans-serif;
   background: #fff;
@@ -18,8 +20,11 @@ body {
   padding: 0;
   color: var(--text-gray);
   overflow-x: hidden;
+  direction: rtl;
+  text-align: right;
 }
 
+/* Header Scope */
 .header {
   background: linear-gradient(45deg, var(--bg-gradient-start), var(--bg-gradient-end));
   padding: 2rem 2rem;
@@ -37,7 +42,7 @@ body {
   animation: bounceIn 1.5s ease-out;
 }
 
-/* Hero Section */
+/* Hero Section Scope */
 .service-hero {
   display: flex;
   align-items: center;
@@ -48,6 +53,7 @@ body {
   margin-bottom: 2rem;
   position: relative;
   overflow: hidden;
+  direction: rtl;
 }
 .service-hero::before {
   content: '';
@@ -89,7 +95,7 @@ body {
 
 .service-hero-content {
   flex: 1;
-  text-align: center; /* Centered title */
+  text-align: center;
 }
 
 .service-hero-content h1 {
@@ -105,22 +111,83 @@ body {
   line-height: 1.5;
 }
 
-/* Service Description */
+.service-hero-content .mixed-text {
+  unicode-bidi: plaintext;
+}
+
+/* Button Styles Scope */
+.btn-contact {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  background-color: var(--secondary-teal);
+  color: #fff;
+  border-radius: 15px;
+  text-decoration: none;
+  transition: var(--transition-normal);
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-contact:hover {
+  background-color: var(--bg-gradient-start);
+  color: #fff;
+}
+
+.btn-sell-all {
+  display: inline-block;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  color: var(--ebc-blue);
+  text-decoration: underline;
+  transition: var(--transition-normal);
+  background-color: var(--bg-gradient-end);
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+.btn-sell-all:hover {
+  background-color: #0f937e;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-large {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: var(--ebc-light);
+  color: var(--ebc-blue);
+  border-radius: 15px;
+  text-decoration: none;
+  transition: var(--transition-normal);
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-large:hover {
+  background-color: #e0f2f7;
+  color: var(--ebc-blue);
+}
+
+/* Service Description Scope */
 .service-description {
   padding: 4rem 0;
   background-color: #fff;
+  direction: rtl;
 }
 
 .service-description h2 {
-  text-align: center; 
+  text-align: center;
 }
+
 .service-description p {
-  text-align: center; 
+  text-align: center;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -148,16 +215,17 @@ body {
   color: #1E3A8A;
 }
 
-/* Why Choose Us */
+/* Why Choose Us Scope */
 .why-choose-us {
   padding: 4rem 0;
   background-color: #E0F2F7;
   position: relative;
   overflow: hidden;
+  direction: rtl;
 }
 
 .why-choose-us h2 {
-  text-align: center; /* Centered title */
+  text-align: center;
 }
 
 .why-choose-us::before {
@@ -190,7 +258,7 @@ body {
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 2rem;
   position: relative;
@@ -234,19 +302,24 @@ body {
   font-size: 1rem;
 }
 
-/* Related Articles */
+.feature-content .mixed-text {
+  unicode-bidi: plaintext;
+}
+
+/* Related Articles Scope */
 .related-articles {
   padding: 4rem 0;
   background-color: #fff;
+  direction: rtl;
 }
 
 .related-articles h2 {
-  text-align: center; /* Centered title */
+  text-align: center;
 }
 
 .articles-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -293,46 +366,27 @@ body {
   text-align: center;
   margin-top: 2rem;
 }
-.btn-sell-all{
-    display: inline-block;
-  padding: 8px 15px;
-  font-size: 0.9rem;
-  color: var(--ebc-blue);
-  text-decoration: underline;
-  transition: var(--transition-normal);
-  background-color: var(--bg-gradient-end);
-  border-radius: 12px;
-  text-decoration: none;
-}
 
-/* Call to Action */
+/* Call to Action Scope */
 .cta {
   padding: 4rem 0;
   background-color: #14B8A6;
   color: #fff;
   text-align: center;
+  direction: rtl;
 }
 
 .cta h2 {
   color: #fff;
   margin-bottom: 1rem;
-  text-align: center; /* Centered title */
 }
 
 .cta p {
   max-width: 600px;
   margin: 0 auto 1.5rem;
 }
-.btn-contact{
-  padding: 12px 25px;
-  font-size: 1.1rem;
-  background-color: var(--ebc-light);
-    color: var(--ebc-blue);
-    border-radius: 15px;
-    text-decoration: none;
-}
 
-/* Animations */
+/* Animations Scope */
 @keyframes pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.1); }
@@ -366,7 +420,7 @@ body {
   100% { transform: translate(0, 0) rotate(45deg); }
 }
 
-/* Responsive Design */
+/* Responsive Design Scope */
 @media (max-width: 768px) {
   .service-hero {
     flex-direction: column;

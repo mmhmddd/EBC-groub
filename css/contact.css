@@ -1,0 +1,187 @@
+:root {
+  --bg-gradient-start: #1E3A8A;
+  --bg-gradient-end: #14B8A6;
+  --ebc-light: #F9FAFB;
+  --light-teal: #6EC4BA;
+  --secondary-teal: #14B8A6;
+  --ebc-blue: #1E3A8A;
+  --text-gray: #6B7280;
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --transition-normal: all 0.4s ease-in-out;
+}
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  background: var(--ebc-light);
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  text-align: right;
+}
+
+.main-content {
+  padding-bottom: 4rem;
+}
+
+.contact-hero {
+  text-align: center;
+  padding: 4rem 0;
+  background: linear-gradient(45deg, var(--bg-gradient-start), var(--bg-gradient-end));
+  border-radius: 0 0 20px 20px;
+  color: #fff;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.contact-details, .contact-form, .whatsapp-contact {
+  padding: 4rem 0;
+  background: #fff;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: var(--ebc-blue);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.company-info {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.company-info p {
+  font-size: 1.1rem;
+  color: var(--text-gray);
+  margin-bottom: 1rem;
+}
+
+.contact-form .form-label {
+  font-weight: 500;
+  color: var(--ebc-blue);
+}
+
+.contact-form .form-control {
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+}
+
+.contact-form .form-control:focus {
+  border-color: var(--secondary-teal);
+  box-shadow: 0 0 5px rgba(20, 184, 166, 0.5);
+}
+
+.btn-submit {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  background-color: var(--secondary-teal);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  transition: var(--transition-normal);
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: var(--light-teal);
+  transform: translateY(-2px);
+}
+
+.whatsapp-contact {
+  background-color: #e0f2f7;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  background-color: #25D366;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1DAF5D;
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp .fab {
+  font-size: 1.5rem;
+}
+
+/* Animation: fadeInUp */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .company-info p {
+    font-size: 1rem;
+  }
+
+  .btn-submit, .btn-whatsapp {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .company-info p {
+    font-size: 0.9rem;
+  }
+
+  .btn-submit, .btn-whatsapp {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}

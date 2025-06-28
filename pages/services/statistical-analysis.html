@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,24 +9,39 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-    <link rel="stylesheet" href="../../css/statistical-analysis.css">
-    <link rel="stylesheet" href="../../css/navbar.css">
-    <link rel="stylesheet" href="../../css/footer.css">
+  <link rel="stylesheet" href="../../css/statistical-analysis.css">
+  <link rel="stylesheet" href="../../css/navbar.css">
+  <link rel="stylesheet" href="../../css/footer.css">
+  <style>
+    /* Inline styles to fix mixed text direction */
+    body {
+      font-family: 'Tajawal', sans-serif;
+      direction: rtl;
+      text-align: right;
+    }
+    .service-hero, .service-description, .why-choose-us, .related-articles, .cta {
+      direction: rtl;
+    }
+    .mixed-text {
+      unicode-bidi: plaintext;
+      display: inline-block;
+      text-align: right;
+    }
+  </style>
 </head>
 <body>
-        <div id="navbar-placeholder"></div> 
-    <main>
-
-   <!-- Hero Section -->
+  <div id="navbar-placeholder"></div>
+  <main>
+    <!-- Hero Section -->
     <section class="service-hero container">
-      <div class="service-hero-image">
-        <img src="/assets/images/services/services1.jpg" alt="التحليل الإحصائي">
-      </div>
+
       <div class="service-hero-content">
         <h1>خدمة التحليل الإحصائي</h1>
-        <p>تحليل بيانات دقيق للبحث العلمي والدراسات الاقتصادية.</p>
+        <p class="mixed-text">تحليل بيانات دقيق للبحث العلمي والدراسات الاقتصادية.</p>
         <a href="../contact.html" class="btn">تواصل معنا الآن</a>
+      </div>
+      <div class="service-hero-image">
+        <img src="/assets/images/services/services1.jpg" alt="التحليل الإحصائي">
       </div>
     </section>
 
@@ -34,7 +49,7 @@
     <section class="service-description">
       <div class="container">
         <h2>ما هو التحليل الإحصائي؟</h2>
-        <p>تحليل البيانات لاستخلاص استنتاجات علمية باستخدام أساليب احترافية.</p>
+        <p class="mixed-text d-flex m-auto justify-content-center" >تحليل البيانات لاستخلاص استنتاجات علمية دقيقة باستخدام أدوات وأساليب رياضية وإحصائية احترافية، بهدف دعم اتخاذ القرار وفهم العلاقات بين المتغيرات.</p>
         
         <h2>خدماتنا الرئيسية</h2>
         <div class="services-grid">
@@ -42,42 +57,42 @@
             <div class="service-icon"><i class="fas fa-chart-line"></i></div>
             <div class="service-card-content">
               <h3>تحليل البيانات</h3>
-              <p>تحليل كمي ونوعي بأدوات حديثة.</p>
+              <p class="mixed-text">تحليل كمي ونوعي بأدوات حديثة.</p>
             </div>
           </div>
           <div class="service-card">
             <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
             <div class="service-card-content">
               <h3>برامج إحصائية</h3>
-              <p>استخدام SPSS, R, Python.</p>
+              <p class="mixed-text">استخدام SPSS, R, Python.</p>
             </div>
           </div>
           <div class="service-card">
             <div class="service-icon"><i class="fas fa-search"></i></div>
             <div class="service-card-content">
               <h3>تصميم استبيانات</h3>
-              <p>استبيانات دقيقة وفعالة.</p>
+              <p class="mixed-text">استبيانات دقيقة وفعالة.</p>
             </div>
           </div>
           <div class="service-card">
             <div class="service-icon"><i class="fas fa-chart-pie"></i></div>
             <div class="service-card-content">
               <h3>تصور البيانات</h3>
-              <p>رسوم بيانية تفاعلية.</p>
+              <p class="mixed-text">رسوم بيانية تفاعلية.</p>
             </div>
           </div>
           <div class="service-card">
             <div class="service-icon"><i class="fas fa-file-alt"></i></div>
             <div class="service-card-content">
               <h3>تقارير إحصائية</h3>
-              <p>تقارير دقيقة ومفصلة.</p>
+              <p class="mixed-text">تقارير دقيقة ومفصلة.</p>
             </div>
           </div>
           <div class="service-card">
             <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
             <div class="service-card-content">
               <h3>استشارات للباحثين</h3>
-              <p>دعم متخصص للدراسات العليا.</p>
+              <p class="mixed-text">دعم متخصص للدراسات العليا.</p>
             </div>
           </div>
         </div>
@@ -87,48 +102,48 @@
     <!-- Why Choose Us -->
     <section class="why-choose-us">
       <div class="container">
-        <h2>ليه تختارنا ؟</h2>
+        <h2>ليه تختارنا؟</h2>
         <div class="features-grid">
           <div class="feature">
             <div class="feature-icon"><i class="fas fa-user-graduate"></i></div>
             <div class="feature-content">
               <h3>خبراء متخصصون</h3>
-              <p>فريق من حملة الشهادات العليا.</p>
+              <p class="mixed-text">فريق من حملة الشهادات العليا.</p>
             </div>
           </div>
           <div class="feature">
             <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
             <div class="feature-content">
               <h3>دقة وموثوقية</h3>
-              <p>نتائج دقيقة بمعايير عالية.</p>
+              <p class="mixed-text">نتائج دقيقة بمعايير عالية.</p>
             </div>
           </div>
           <div class="feature">
             <div class="feature-icon"><i class="fas fa-tools"></i></div>
             <div class="feature-content">
               <h3>أدوات حديثة</h3>
-              <p>برامج وتقنيات متطورة.</p>
+              <p class="mixed-text">برامج وتقنيات متطورة.</p>
             </div>
           </div>
           <div class="feature">
             <div class="feature-icon"><i class="fas fa-clock"></i></div>
             <div class="feature-content">
               <h3>التزام بالمواعيد</h3>
-              <p>تسليم في الوقت المحدد.</p>
+              <p class="mixed-text">تسليم في الوقت المحدد.</p>
             </div>
           </div>
           <div class="feature">
             <div class="feature-icon"><i class="fas fa-comments"></i></div>
             <div class="feature-content">
               <h3>تواصل مستمر</h3>
-              <p>دعم مستمر للعملاء.</p>
+              <p class="mixed-text">دعم مستمر للعملاء.</p>
             </div>
           </div>
           <div class="feature">
             <div class="feature-icon"><i class="fas fa-lock"></i></div>
             <div class="feature-content">
               <h3>سرية البيانات</h3>
-              <p>حماية كاملة للبيانات.</p>
+              <p class="mixed-text">حماية كاملة للبيانات.</p>
             </div>
           </div>
         </div>
@@ -138,38 +153,35 @@
     <!-- Related Articles -->
     <section class="related-articles">
       <div class="container">
-        <h2> اقرأ أيضاً بعض المقالات</h2>
+        <h2>اقرأ أيضاً بعض المقالات</h2>
         <div class="articles-grid">
-
           <div class="article-card">
             <div class="article-image">
               <img src="/assets/images/home/blog1.webp" alt="أساسيات التحليل الإحصائي">
             </div>
             <div class="article-content">
               <h3>التحليل الإحصائي والقياسي</h3>
-              <p>اكتشف كيف يمكن للتحليل الإحصائي تحسين قراراتك التجارية باستخدام أحدث الأدوات والتقنيات.</p>
+              <p class="mixed-text">اكتشف كيف يمكن للتحليل الإحصائي تحسين قراراتك التجارية باستخدام أحدث الأدوات والتقنيات.</p>
               <a href="../articles/html/statistical-analysis/basics-of-statistical-analysis.html" class="read-more">اقرأ المزيد</a>
             </div>
           </div>
-
           <div class="article-card">
             <div class="article-image">
               <img src="/assets/images/home/blog2.webp" alt="دور التحليل في القرارات">
             </div>
             <div class="article-content">
               <h3>دليل الترجمة المعتمدة لعام 2025</h3>
-              <p>تعرف على أفضل الممارسات للحصول على ترجمات دقيقة ومعتمدة في مختلف المجالات.</p>
+              <p class="mixed-text">تعرف على أفضل الممارسات للحصول على ترجمات دقيقة ومعتمدة في مختلف المجالات.</p>
               <a href="../articles/html/statistical-analysis/statistical-analysis-in-strategic-decision-making.html" class="read-more">اقرأ المزيد</a>
             </div>
           </div>
-
           <div class="article-card">
             <div class="article-image">
               <img src="/assets/images/home/blog3.webp" alt="نماذج الانحدار">
             </div>
             <div class="article-content">
               <h3>استراتيجيات التدريب الفعّال</h3>
-              <p >تعلم كيفية تصميم برامج تدريبية تناسب احتياجات فريقك وتعزز إنتاجيته.</p>
+              <p class="mixed-text">تعلم كيفية تصميم برامج تدريبية تناسب احتياجات فريقك وتعزز إنتاجيته.</p>
               <a href="../articles/html/statistical-analysis/multiple-regression-models-in-economic-studies.html" class="read-more">اقرأ المزيد</a>
             </div>
           </div>
@@ -188,14 +200,11 @@
         <a href="https://wa.me/201153480793" class="btn btn-large">تواصل معنا</a>
       </div>
     </section>
-
-
-    </main>
-    <div id="footer-placeholder"></div>
-
+  </main>
+  <div id="footer-placeholder"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
+  <script>
     fetch('../../shared/navbar/navbar.html')
       .then(response => response.text())
       .then(data => {
