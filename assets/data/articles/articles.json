@@ -1,0 +1,202 @@
+[
+  {
+    "title": "التدقيق اللغوي للمحتوى الأكاديمي",
+    "category": "التدقيق اللغوي",
+    "content": "تعلم أساسيات التدقيق اللغوي لتحسين النصوص الأكاديمية.",
+    "image": "/assets/images/article/article1.webp",
+    "link": "#",
+    "slug": "/pages/articles/academic-content-proofreading/academic-content-proofreading.html"
+  },
+  {
+    "title": "تقنيات التدقيق اللغوي المتقدمة",
+    "category": "التدقيق اللغوي",
+    "content": "استكشاف التقنيات المتقدمة لرفع جودة التدقيق اللغوي.",
+    "image": "/assets/images/article/article2.webp",
+    "link": "#",
+    "slug": "/pages/articles/advanced-proofreading-techniques/advanced-proofreading-techniques.html"
+  },
+  {
+    "title": "أساسيات التدقيق اللغوي",
+    "category": "التدقيق اللغوي",
+    "content": "دليل للمبتدئين حول أساسيات التدقيق اللغوي الفعال.",
+    "image": "/assets/images/article/article3.webp",
+    "link": "#",
+    "slug": "/pages/articles/basics-of-proofreading/basics-of-proofreading.html"
+  },
+  {
+    "title": "الاختلافات بين التحرير والتدقيق اللغوي",
+    "category": "التدقيق اللغوي",
+    "content": "فهم الفرق بين التحرير والتدقيق اللغوي وأدوارهما.",
+    "image": "/assets/images/article/article8.webp",
+    "link": "#",
+    "slug": "/pages/articles/differences-editing-proofreading/differences-editing-proofreading.html"
+  },
+  {
+    "title": "تدقيق محتوى الوسائط",
+    "category": "التدقيق اللغوي",
+    "content": "نصائح لتدقيق المحتوى المرئي والمسموع بكفاءة.",
+    "image": "/assets/images/article/article1.webp",
+    "link": "#",
+    "slug": "/pages/articles/media-content-proofreading/media-content-proofreading.html"
+  },
+  {
+    "title": "تقنيات التدقيق اللغوي الحديثة",
+    "category": "التدقيق اللغوي",
+    "content": "أحدث التقنيات في مجال التدقيق اللغوي باستخدام التكنولوجيا.",
+    "image": "/assets/images/article/article6.webp",
+    "link": "#",
+    "slug": "/pages/articles/modern-proofreading-techniques/modern-proofreading-techniques.html"
+  },
+  {
+    "title": "أساسيات التحليل الإحصائي",
+    "category": "التحليل الإحصائي",
+    "content": "مقدمة عن المفاهيم الأساسية للتحليل الإحصائي.",
+    "image": "/assets/images/article/article7.webp",
+    "link": "#",
+    "slug": "/pages/articles/basics-of-statistical-analysis/basics-of-statistical-analysis.html"
+  },
+  {
+    "title": "تحليل الإحصائي للبيانات الكبيرة",
+    "category": "التحليل الإحصائي",
+    "content": "استكشاف الأساليب الإحصائية لتحليل مجموعات البيانات الكبيرة.",
+    "image": "/assets/images/article/article4.jpg",
+    "link": "#",
+    "slug": "/pages/articles/big-data-statistical-analysis/big-data-statistical-analysis.html"
+  },
+  {
+    "title": "أخطاء شائعة في التحليل الإحصائي",
+    "category": "التحليل الإحصائي",
+    "content": "تحديد وتجنب الأخطاء الشائعة في التحليل الإحصائي.",
+    "image": "/assets/images/article/article9.webp",
+    "link": "#",
+    "slug": "/pages/articles/common-errors-in-statistical-analysis/common-errors-in-statistical-analysis.html"
+  },
+  {
+    "title": "أفضل ممارسات لتقنيات تصور البيانات",
+    "category": "التحليل الإحصائي",
+    "content": "أفضل الممارسات لتصور البيانات الفعّال في التحليل.",
+    "image": "/assets/images/article/article10.webp",
+    "link": "#",
+    "slug": "/pages/articles/data-visualization-techniques-best-practices/data-visualization-techniques-best-practices.html"
+  },
+  {
+    "title": "نماذج الانحدار المتعدد في الدراسات الاقتصادية",
+    "category": "التحليل الإحصائي",
+    "content": "تطبيق نماذج الانحدار المتعدد في الأبحاث الاقتصادية.",
+    "image": "/assets/images/article/article11.webp",
+    "link": "#",
+    "slug": "/pages/articles/multiple-regression-models-in-economic-studies/multiple-regression-models-in-economic-studies.html"
+  },
+  {
+    "title": "التحليل الإحصائي في اتخاذ القرارات الاستراتيجية",
+    "category": "التحليل الإحصائي",
+    "content": "استخدام الإحصائيات لتعزيز القرارات الاستراتيجية للأعمال.",
+    "image": "/assets/images/article/article12.webp",
+    "link": "#",
+    "slug": "/pages/articles/statistical-analysis-in-strategic-decision-making/statistical-analysis-in-strategic-decision-making.html"
+  },
+  {
+    "title": "استخدام برمجيات الإحصاء SPSS وR وPython",
+    "category": "التحليل الإحصائي",
+    "content": "دليل لاستخدام برامج SPSS وR وPython في التحليل الإحصائي.",
+    "image": "/assets/images/article/article13.webp",
+    "link": "#",
+    "slug": "/pages/articles/using-statistical-software-spss-r-python/using-statistical-software-spss-r-python.html"
+  },
+  {
+    "title": "تخصيص التدريب للصناعات",
+    "category": "حزم التدريب",
+    "content": "تخصيص برامج التدريب لتلبية احتياجات الصناعات المحددة.",
+    "image": "/assets/images/article/article14.webp",
+    "link": "#",
+    "slug": "/pages/articles/customizing-training-for-industries/customizing-training-for-industries.html"
+  },
+  {
+    "title": "تصميم حزم تدريب فعالة",
+    "category": "حزم التدريب",
+    "content": "خطوات لإنشاء حزم تدريبية فعالة ومؤثرة.",
+    "image": "/assets/images/article/article15.webp",
+    "link": "#",
+    "slug": "/pages/articles/designing-effective-training-packages/designing-effective-training-packages.html"
+  },
+  {
+    "title": " حزم تدريبية فعالة",
+    "category": "حزم التدريب",
+    "content": "المبادئ الأساسية لتصميم مواد تدريبية ناجحة.",
+    "image": "/assets/images/article/article16.webp",
+    "link": "#",
+    "slug": "/pages/articles/effective-training-package-design/effective-training-package-design.html"
+  },
+  {
+    "title": "الاتجاهات المستقبلية في التدريب الشركاتي",
+    "category": "حزم التدريب",
+    "content": "الاتجاهات الناشئة التي تشكل مستقبل التدريب الشركاتي.",
+    "image": "/assets/images/article/article17.webp",
+    "link": "#",
+    "slug": "/pages/articles/future-trends-in-corporate-training/future-trends-in-corporate-training.html"
+  },
+  {
+    "title": "أهمية حزم التدريب",
+    "category": "حزم التدريب",
+    "content": "فهم قيمة البرامج التدريبية المنظمة.",
+    "image": "/assets/images/article/article18.webp",
+    "link": "#",
+    "slug": "/pages/articles/importance-of-training-packages/importance-of-training-packages.html"
+  },
+  {
+    "title": "قياس عائد الاستثمار في التدريب",
+    "category": "حزم التدريب",
+    "content": "طرق لقياس العائد على الاستثمار في التدريب.",
+    "image": "/assets/images/article/article19.webp",
+    "link": "#",
+    "slug": "/pages/articles/measuring-training-roi/measuring-training-roi.html"
+  },
+  {
+    "title": "أهمية الترجمة المعتمدة",
+    "category": "الترجمة",
+    "content": "لماذا الترجمة المعتمدة ضرورية للوثائق الرسمية.",
+    "image": "/assets/images/article/article20.webp",
+    "link": "#",
+    "slug": "/pages/articles/importance-of-certified-translation/importance-of-certified-translation.html"
+  },
+  {
+    "title": "تحديات الترجمة القانونية",
+    "category": "الترجمة",
+    "content": "تجاوز التحديات في ترجمة النصوص القانونية بدقة.",
+    "image": "/assets/images/article/article21.webp",
+    "link": "#",
+    "slug": "/pages/articles/legal-translation-challenges/legal-translation-challenges.html"
+  },
+  {
+    "title": "استراتيجيات الترجمة الأدبية",
+    "category": "الترجمة",
+    "content": "استراتيجيات فعالة لترجمة الأعمال الأدبية.",
+    "image": "/assets/images/article/article22.webp",
+    "link": "#",
+    "slug": "/pages/articles/literary-translation-strategies/literary-translation-strategies.html"
+  },
+  {
+    "title": "الترجمة الآلية مقابل الترجمة البشرية",
+    "category": "الترجمة",
+    "content": "مقارنة مزايا وعيوب الترجمة الآلية مقابل البشرية.",
+    "image": "/assets/images/article/article23.webp",
+    "link": "#",
+    "slug": "/pages/articles/machine-vs-human-translation/machine-vs-human-translation.html"
+  },
+  {
+    "title": "الترجمة العلمية والتقنية المتخصصة",
+    "category": "الترجمة",
+    "content": "تقنيات لترجمة المحتوى العلمي والتقني المعقد.",
+    "image": "/assets/images/article/article24.webp",
+    "link": "#",
+    "slug": "/pages/articles/specialized-scientific-technical-translation/specialized-scientific-technical-translation.html"
+  },
+  {
+    "title": "دور الترجمة في التبادل الثقافي",
+    "category": "الترجمة",
+    "content": "كيف تعزز الترجمة الفهم الثقافي والتبادل.",
+    "image": "/assets/images/article/article25.webp",
+    "link": "#",
+    "slug": "/pages/articles/translation-role-in-cultural-exchange/translation-role-in-cultural-exchange.html"
+  }
+]

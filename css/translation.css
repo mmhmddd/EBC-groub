@@ -80,14 +80,30 @@ body {
   transition: var(--transition-normal);
   box-shadow: var(--shadow-md);
   margin: 25px;
-  text-decoration: none !important;
+
 }
 
-.btn:hover {
+.btn:hover ,.btn-article:hover {
   background: var(--light-teal);
   transform: translateY(-3px);
   box-shadow: var(--shadow-lg);
   color: #F9FAFB !important;
+  
+}
+.btn-article{
+  display: flex !important;
+  padding: 15px!important;
+  font-size: 1rem;
+  color: #fff;
+  background: var(--secondary-teal);
+  width: 12rem;
+  margin: 12px auto ;
+   text-decoration: none;
+  border-radius: 25px;
+  transition: var(--transition-normal);
+  box-shadow: var(--shadow-md);
+  align-content: center;
+
 }
 
 .service-description, .languages-section, .why-choose-us, .related-articles, .cta {
@@ -190,18 +206,21 @@ body {
 }
 
 .cta {
+  background-color: #14B8A6;
   text-align: center;
   padding: 2rem;
+  margin: 0;
 }
 
 .cta p {
   font-size: 1.1rem;
-  margin-bottom: 1.5rem;
+  color: white;
 }
 
 .btn-large {
   padding: 12px 25px;
   font-size: 1.1rem;
+  background-color: #1E3A8A;
 }
 
 /* Overlay for language hover */
