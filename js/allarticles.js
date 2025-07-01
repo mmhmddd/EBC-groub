@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const carouselIndicators = document.getElementById('articleCarousel')?.querySelector('.carousel-indicators');
   const filterBtn = document.getElementById('filterBtn');
   const sidebar = document.getElementById('sidebar');
+  const featuredArticles = document.getElementById('featuredArticles');
+  const backToTop = document.getElementById('backToTop');
   let allArticles = [];
 
   // أنشئ كائن الـ Offcanvas مرة واحدة فقط
@@ -34,13 +36,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!Array.isArray(data) || data.length === 0) {
           console.warn('No valid articles data found');
           renderArticles([]);
+          renderFeaturedArticles([]);
           return;
         }
         allArticles = data;
         populateCarousel();
         populateCategories();
+        renderFeaturedArticles(allArticles.slice(0, 3)); // Initial featured articles
         renderArticles(allArticles);
-        filterArticles(allArticles);
+        filterArticles(allArticles); // Apply initial filter
+        toggleFeaturedSection(); // Initial toggle based on search input
       })
       .catch(error => {
         console.error('خطأ في تحميل البيانات:', error);
@@ -102,6 +107,40 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!searchTerm) return text;
     const regex = new RegExp(`(${searchTerm})`, 'gi');
     return text.replace(regex, '<span class="highlight">$1</span>');
+  }
+
+  function renderFeaturedArticles(data) {
+    if (!featuredArticles) {
+      console.error('Featured articles section not found');
+      return;
+    }
+    const grid = featuredArticles.querySelector('.featured-grid');
+    grid.innerHTML = '';
+
+    if (!data || data.length === 0) {
+      grid.innerHTML = '<p class="text-center">لا يوجد مقالات مميزة.</p>';
+      return;
+    }
+
+    const searchTerm = ''; // No filtering for featured articles
+    data.slice(0, 3).forEach((article, index) => {
+      const card = document.createElement('div');
+      card.className = 'featured-card';
+      card.innerHTML = `
+        <div class="featured-image">
+          <img src="${article.image || '/assets/images/placeholder.jpg'}" alt="${article.title}" class="img-fluid" loading="lazy">
+        </div>
+        <div class="featured-details">
+          <h5 class="featured-title">${highlightMatches(article.title, searchTerm)}</h5>
+          <p class="featured-text">${highlightMatches(article.content || 'لا يوجد محتوى متاح', searchTerm)}</p>
+          <div class="featured-buttons">
+            <a href="${article.slug || '#'}" class="feature-btn btn-solutions">اقرأ المقال</a>
+            <a href="#" class="feature-btn btn-quote" onclick="shareArticle('${article.title}', '${window.location.href + article.slug}')">شارك المقال</a>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
   }
 
   function renderArticles(data) {
@@ -187,9 +226,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     requestAnimationFrame(() => {
       renderArticles(filtered.length > 0 ? filtered : []);
+      toggleFeaturedSection(); // Toggle featured section based on search input
       loader.style.display = 'none'; // Hide loader after rendering
     });
   }
+
+  function toggleFeaturedSection() {
+    if (featuredArticles) {
+      featuredArticles.style.display = searchInput.value.trim() ? 'none' : 'block';
+    }
+  }
+
+  // Back to top functionality
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) { // Show button after scrolling 300px
+      backToTop.style.display = 'block';
+    } else {
+      backToTop.style.display = 'none';
+    }
+  });
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
 
   window.shareArticle = (title, url) => {
     if (navigator.share) {
@@ -201,7 +263,10 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // الفلاتر
-  searchInput.addEventListener('input', () => filterArticles(allArticles));
+  searchInput.addEventListener('input', () => {
+    filterArticles(allArticles);
+    toggleFeaturedSection(); // Toggle on every input change
+  });
   categoryFilter.addEventListener('change', () => filterArticles(allArticles));
   clearFilter.addEventListener('click', () => {
     searchInput.value = '';
@@ -209,6 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.removeItem('selectedCategory');
     localStorage.removeItem('searchTerm');
     filterArticles(allArticles);
+    toggleFeaturedSection(); // Show featured section when cleared
   });
 
   // زر فتح الفلتر الجانبي
