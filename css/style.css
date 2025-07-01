@@ -76,22 +76,40 @@ main {
   padding-bottom: 1rem !important;
 }
 
+
+
 /* ===== قسم البطل ===== */
 .hero {
   position: relative;
-  background: linear-gradient(90deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
-  padding: 4rem 0;
-  overflow: hidden;
-  color: white;
-  min-height: 400px;
+  background-image: url('/assets/images/home/hero_image.webp');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 8rem 0;
+  min-height: 100vh;
+  overflow: visible;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .hero-content {
+  position: relative;
+  z-index: 2;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 2rem;
   flex-wrap: wrap;
+  padding-bottom: 200px;
 }
 
 .hero-text {
@@ -105,7 +123,7 @@ main {
   background: linear-gradient(90deg, var(--light-teal) 0%, var(--secondary-teal) 100%);
   -webkit-background-clip: text;
   background-clip: text;
-  color: var(--ebc-light);
+  color: transparent;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -117,6 +135,9 @@ main {
   line-height: 1.2;
   margin-bottom: 1rem;
   color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid white;
 }
 
 .hero-description {
@@ -188,22 +209,92 @@ main {
   transform: translateY(-2px);
 }
 
-.hero-image {
-  max-width: 40%;
-  position: relative;
+/* ===== بطاقات الخدمات ===== */
+.service-cards {
+  display: flex;
+  gap: 1.5rem;
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 80%;
+  justify-content: space-between;
 }
 
-.hero-image-inner {
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: var(--shadow-soft);
-  border: 15px solid rgba(255, 255, 255, 0.2);
+.service-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(30, 58, 138, 0.1));
+  border-radius: 15px;
+  padding: 2rem;
+  width: 220px;
+  height: 300px;
+  text-align: center;
+  color: var(--ebc-light);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 2px solid var(--secondary-teal);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.hero-image img {
-  width: 100%;
-  height: auto;
-  display: block;
+.service-card i {
+  font-size: 2.5rem;
+  color: var(--secondary-teal);
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: var(--ebc-light);
+  flex-grow: 1;
+  height: 10px;
+}
+
+.card-link {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+}
+
+.card-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--secondary-teal);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+
+.card-link a:hover {
+  color: var(--light-teal);
+}
+
+.card-link a i {
+  font-size: 1rem;
+  color: var(--secondary-teal);
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.card-link a:hover i {
+  color: var(--light-teal);
+  transform: translateX(-4px);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
 }
 
 /* ===== التحريكات ===== */
@@ -252,6 +343,10 @@ main {
 
 /* ===== استجابة ===== */
 @media (max-width: 768px) {
+  .hero {
+    min-height: 600px;
+    padding: 4rem 0;
+  }
   .hero-text {
     max-width: 100%;
     text-align: center;
@@ -259,15 +354,25 @@ main {
   .hero-title {
     font-size: 2rem;
   }
-  .hero-image {
-    max-width: 100%;
+  .service-cards {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    position: static;
+    bottom: 0;
+    transform: none;
     margin-top: 2rem;
+  }
+  .service-card {
+    width: 80%;
+    height: 350px;
+    margin-bottom: 1rem;
+    position: static;
   }
   .hero-shape-1, .hero-shape-2 {
     display: none;
   }
 }
-
 .feature-area {
   padding: 4rem 0;
   opacity: 0;
