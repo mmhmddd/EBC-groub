@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const articleContainer = document.getElementById('articleContainer');
   const clearFilter = document.getElementById('clearFilter');
   const loader = document.getElementById('loader');
-  const carouselInner = document.getElementById('articleCarousel').querySelector('.carousel-inner');
-  const carouselIndicators = document.getElementById('articleCarousel').querySelector('.carousel-indicators');
+  const carouselInner = document.getElementById('articleCarousel')?.querySelector('.carousel-inner');
+  const carouselIndicators = document.getElementById('articleCarousel')?.querySelector('.carousel-indicators');
   const filterBtn = document.getElementById('filterBtn');
   const sidebar = document.getElementById('sidebar');
   let allArticles = [];
@@ -21,22 +21,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // تحميل وعرض المقالات
   function fetchArticles() {
+    loader.style.display = 'block';
     fetch('/assets/data/articles/articles.json')
       .then(response => {
-        if (!response.ok) throw new Error('Network response was not ok');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
         return response.json();
       })
       .then(data => {
+        console.log('Fetched articles:', data);
+        if (!Array.isArray(data) || data.length === 0) {
+          console.warn('No valid articles data found');
+          renderArticles([]);
+          return;
+        }
         allArticles = data;
         populateCarousel();
         populateCategories();
         renderArticles(allArticles);
         filterArticles(allArticles);
       })
-      .catch(error => console.error('خطأ في تحميل البيانات:', error));
+      .catch(error => {
+        console.error('خطأ في تحميل البيانات:', error);
+        articleContainer.innerHTML = '<p class="text-center">فشل تحميل المقالات. تحقق من الاتصال بالإنترنت أو الملف.</p>';
+        loader.style.display = 'none';
+      })
+      .finally(() => {
+        loader.style.display = 'none';
+      });
   }
 
   function populateCarousel() {
+    if (!carouselInner || !carouselIndicators) {
+      console.warn('Carousel elements not found');
+      return;
+    }
     carouselInner.innerHTML = '';
     carouselIndicators.innerHTML = '';
     const topArticles = allArticles.slice(0, 5);
@@ -64,7 +84,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function populateCategories() {
+    if (!categoryFilter) {
+      console.warn('Category filter element not found');
+      return;
+    }
     const categories = [...new Set(allArticles.map(article => article.category))];
+    categoryFilter.innerHTML = '<option value="">الكل</option>';
     categories.forEach(category => {
       const option = document.createElement('option');
       option.value = category.toLowerCase();
@@ -73,65 +98,80 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function highlightMatches(text, searchTerm) {
+    if (!searchTerm) return text;
+    const regex = new RegExp(`(${searchTerm})`, 'gi');
+    return text.replace(regex, '<span class="highlight">$1</span>');
+  }
+
   function renderArticles(data) {
+    if (!articleContainer || !loader) {
+      console.error('Article container or loader not found');
+      return;
+    }
     articleContainer.innerHTML = '';
     loader.style.display = 'none';
+
     if (!data || data.length === 0) {
       articleContainer.innerHTML = '<p class="text-center">لا يوجد مقالات متطابقة.</p>';
       return;
     }
+
+    const section = document.createElement('section');
+    section.className = 'services-grid';
+    const searchTerm = searchInput.value.toLowerCase().trim();
     data.forEach((article, index) => {
       const isEven = index % 2 === 0;
-      const row = document.createElement('div');
-      row.className = `row article-row ${isEven ? '' : 'reverse'}`;
-      row.innerHTML = `
-        <div class="col-12">
-          <div class="row">
-            ${isEven ? `
-              <div class="col-4 article-image">
-                <img src="${article.image}" alt="${article.title}">
+      const featureItem = document.createElement('div');
+      featureItem.className = 'feature-item';
+
+      featureItem.innerHTML = `
+        <div class="feature-content">
+          ${isEven ? `
+            <div class="feature-image">
+              <img src="${article.image || '/assets/images/placeholder.jpg'}" alt="${article.title}" class="img-fluid" loading="lazy">
+            </div>
+            <div class="feature-details">
+              <h5 class="feature-title">${highlightMatches(article.title, searchTerm)}</h5>
+              <p class="feature-text">${highlightMatches(article.content || 'لا يوجد محتوى متاح', searchTerm)}</p>
+              <div class="feature-buttons">
+                <a href="${article.slug || '#'}" class="feature-btn btn-solutions">اقرأ المقال</a>
+                <a href="#" class="feature-btn btn-quote" onclick="shareArticle('${article.title}', '${window.location.href + article.slug}')">شارك المقال</a>
               </div>
-              <div class="col-8 article-content">
-                <div class="article-header">
-                  <h3 class="article-title">${article.title}</h3>
-                  <p class="article-category">${article.category}</p>
-                </div>
-                <p class="article-description">${article.content}</p>
-                <div class="article-actions">
-                  <a href="${article.slug}" class="article-btn">اقرأ المقال</a>
-                  <a href="#" class="share-btn" onclick="shareArticle('${article.title}', '${window.location.href + article.slug}')">مشاركة</a>
-                </div>
+            </div>
+          ` : `
+            <div class="feature-details">
+              <h5 class="feature-title">${highlightMatches(article.title, searchTerm)}</h5>
+              <p class="feature-text">${highlightMatches(article.content || 'لا يوجد محتوى متاح', searchTerm)}</p>
+              <div class="feature-buttons">
+                <a href="${article.slug || '#'}" class="feature-btn btn-solutions">اقرأ المقال</a>
+                <a href="#" class="feature-btn btn-quote" onclick="shareArticle('${article.title}', '${window.location.href + article.slug}')">شارك المقال</a>
               </div>
-            ` : `
-              <div class="col-8 article-content">
-                <div class="article-header">
-                  <h3 class="article-title">${article.title}</h3>
-                  <p class="article-category">${article.category}</p>
-                </div>
-                <p class="article-description">${article.content}</p>
-                <div class="article-actions">
-                  <a href="${article.slug}" class="article-btn">اقرأ المقال</a>
-                  <a href="#" class="share-btn" onclick="shareArticle('${article.title}', '${window.location.href + article.slug}')">مشاركة</a>
-                </div>
-              </div>
-              <div class="col-4 article-image">
-                <img src="${article.image}" alt="${article.title}">
-              </div>
-            `}
-          </div>
+            </div>
+            <div class="feature-image">
+              <img src="${article.image || '/assets/images/placeholder.jpg'}" alt="${article.title}" class="img-fluid" loading="lazy">
+            </div>
+          `}
         </div>
       `;
-      articleContainer.appendChild(row);
+
+      section.appendChild(featureItem);
       if (index < data.length - 1) {
         const hr = document.createElement('hr');
         hr.className = 'divider';
-        articleContainer.appendChild(hr);
+        section.appendChild(hr);
       }
     });
+
+    articleContainer.appendChild(section);
   }
 
   function filterArticles(data) {
-    loader.style.display = 'block';
+    if (!loader) {
+      console.warn('Loader element not found');
+      return;
+    }
+    loader.style.display = 'block'; // Show loader during filtering
     const searchTerm = searchInput.value.toLowerCase().trim();
     const selectedCategory = categoryFilter.value.toLowerCase();
     const filtered = data.filter(article => {
@@ -147,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     requestAnimationFrame(() => {
       renderArticles(filtered.length > 0 ? filtered : []);
-      loader.style.display = 'none';
+      loader.style.display = 'none'; // Hide loader after rendering
     });
   }
 
@@ -173,14 +213,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // زر فتح الفلتر الجانبي
   filterBtn.addEventListener('click', () => {
-    offcanvas.show(); // استخدم نفس الكائن دائمًا
+    offcanvas.show();
   });
 
   // عند إغلاق الشريط الجانبي
   sidebar.addEventListener('hidden.bs.offcanvas', () => {
-    document.body.style.overflow = ''; // التأكد من إعادة التمرير
+    document.body.style.overflow = '';
     const backdrop = document.querySelector('.offcanvas-backdrop');
-    if (backdrop) backdrop.remove();  // حذف الخلفية المظللة إن وجدت
+    if (backdrop) backdrop.remove();
   });
 
   // تحميل أولي
