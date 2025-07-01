@@ -29,15 +29,21 @@ document.addEventListener('DOMContentLoaded', () => {
       card.classList.remove('center', 'side');
       card.style.display = 'block';
 
-      const prevIndex = (currentIndex - 1 + totalCards) % totalCards;
-      const nextIndex = (currentIndex + 1) % totalCards;
+      if (window.innerWidth > 768) {
+        // Desktop behavior
+        const prevIndex = (currentIndex - 1 + totalCards) % totalCards;
+        const nextIndex = (currentIndex + 1) % totalCards;
 
-      if (index === currentIndex) {
-        card.classList.add('center');
-      } else if (index === prevIndex || index === nextIndex) {
-        card.classList.add('side');
+        if (index === currentIndex) {
+          card.classList.add('center');
+        } else if (index === prevIndex || index === nextIndex) {
+          card.classList.add('side');
+        } else {
+          card.style.display = 'none';
+        }
       } else {
-        card.style.display = 'none';
+        // Mobile behavior
+        card.style.display = index === currentIndex ? 'block' : 'none';
       }
     });
 
@@ -45,14 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
       dot.classList.toggle('active', index === currentIndex);
     });
 
-    // Scroll to center the current card on mobile
-    if (window.innerWidth <= 768) {
-      const currentCard = cards[currentIndex];
-      currentCard.scrollIntoView({
-        behavior: 'smooth',
-        inline: 'center',
-      });
-    }
+    // Ensure arrows remain fixed
+    prevBtn.style.left = window.innerWidth > 768 ? '-60px' : '10px';
+    nextBtn.style.right = window.innerWidth > 768 ? '-60px' : '10px';
   }
 
   // Navigation button events
@@ -74,35 +75,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Touch support for mobile
+  // Touch support for mobile (disabled on small screens for simplicity)
   let touchStartX = 0;
   let touchEndX = 0;
 
-  slider.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  });
+  if (window.innerWidth > 768) {
+    slider.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
 
-  slider.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    if (touchStartX - touchEndX > 50) {
-      // Swipe left
-      currentIndex = (currentIndex + 1) % totalCards;
-      updateSlider();
-    } else if (touchEndX - touchStartX > 50) {
-      // Swipe right
-      currentIndex = (currentIndex - 1 + totalCards) % totalCards;
-      updateSlider();
-    }
-  });
+    slider.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 50) {
+        currentIndex = (currentIndex + 1) % totalCards;
+        updateSlider();
+      } else if (touchEndX - touchStartX > 50) {
+        currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+        updateSlider();
+      }
+    });
+  }
 
   // Initialize slider
   updateSlider();
 
   // Update slider on window resize
-  window.addEventListener('resize', updateSlider);
+  window.addEventListener('resize', () => {
+    updateSlider();
+  });
 });
-
-
 
 
 
