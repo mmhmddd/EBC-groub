@@ -9,25 +9,22 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    fetch('../../shared/navbar/navbar.html')
-      .then(response => {
-        if (!response.ok) throw new Error('فشل تحميل النافبار');
-        return response.text();
-      })
-      .then(data => {
-        navbarPlaceholder.innerHTML = data;
-      })
-      .catch(error => console.error('خطأ في تحميل النافبار:', error));
-
-    fetch('../../shared/footer/footer.html')
-      .then(response => {
-        if (!response.ok) throw new Error('فشل تحميل الفوتر');
-        return response.text();
-      })
-      .then(data => {
-        footerPlaceholder.innerHTML = data;
-      })
-      .catch(error => console.error('خطأ في تحميل الفوتر:', error));
+    Promise.all([
+      fetch('../../shared/navbar/navbar.html')
+        .then(response => {
+          if (!response.ok) throw new Error('فشل تحميل النافبار');
+          return response.text();
+        })
+        .then(data => navbarPlaceholder.innerHTML = data)
+        .catch(error => console.error('خطأ في تحميل النافبار:', error)),
+      fetch('../../shared/footer/footer.html')
+        .then(response => {
+          if (!response.ok) throw new Error('فشل تحميل الفوتر');
+          return response.text();
+        })
+        .then(data => footerPlaceholder.innerHTML = data)
+        .catch(error => console.error('خطأ في تحميل الفوتر:', error))
+    ]).catch(error => console.error('خطأ في تحميل المكونات:', error));
   };
 
   // Hero Slider
@@ -41,24 +38,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     let currentSlide = 0;
+    let autoSlide = null;
 
     const showSlide = (index) => {
-      heroSlides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
+      heroSlides.forEach((slide, i) => slide.classList.toggle('active', i === index));
       currentSlide = index;
     };
 
     const nextSlide = () => showSlide((currentSlide + 1) % heroSlides.length);
 
-    let autoSlide = setInterval(nextSlide, 3000);
-
-    heroSliderContent.addEventListener('mouseenter', () => clearInterval(autoSlide));
-    heroSliderContent.addEventListener('mouseleave', () => {
+    const startAutoSlide = () => {
       autoSlide = setInterval(nextSlide, 3000);
-    });
+    };
+
+    const stopAutoSlide = () => {
+      if (autoSlide) clearInterval(autoSlide);
+    };
+
+    heroSliderContent.addEventListener('mouseenter', stopAutoSlide);
+    heroSliderContent.addEventListener('mouseleave', startAutoSlide);
+    heroSliderContent.addEventListener('touchstart', stopAutoSlide, { passive: true });
+    heroSliderContent.addEventListener('touchend', startAutoSlide, { passive: true });
 
     showSlide(currentSlide);
+    startAutoSlide();
   };
 
   // Progress Bars
@@ -67,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            console.log('Section is intersecting, initializing progress bars');
             const progressBars = entry.target.querySelectorAll('.progress-bar');
             if (progressBars.length === 0) {
               console.error('No progress bars found in the skills-showcase section');
@@ -76,34 +78,30 @@ document.addEventListener('DOMContentLoaded', () => {
             progressBars.forEach((bar, index) => {
               setTimeout(() => {
                 const track = bar.closest('.progress-item');
-                const value = parseFloat(track.getAttribute('data-value') || '0');
+                const value = parseFloat(track?.getAttribute('data-value') || '0');
                 if (!isNaN(value) && value >= 0 && value <= 100) {
-                  console.log(`Animating progress bar to ${value}%`);
+                  bar.style.transition = `width ${index * 0.2}s ease-in-out`; // Smooth transition
                   bar.style.width = `${value}%`;
+                  bar.setAttribute('aria-valuenow', value);
                 } else {
                   console.error(`Invalid data-value for progress bar: ${value}`);
                   bar.style.width = '0%';
                 }
-              }, index * 200); // Staggered animation with 200ms delay
+              }, index * 200);
             });
-            // Uncomment the next line if you want a one-time trigger
-            // observer.unobserve(entry.target);
+            observer.unobserve(entry.target); // One-time trigger
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px 0px 0px' } // Added rootMargin for better detection
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
 
     const section = document.querySelector('.skills-showcase');
-    if (section) {
-      console.log('Skills showcase section found, observing...');
-      observer.observe(section);
-    } else {
-      console.error('Skills showcase section not found in the DOM');
-    }
+    if (section) observer.observe(section);
+    else console.error('Skills showcase section not found in the DOM');
   };
 
-  // Initialize Continuous Slider
+  // Continuous Slider Class
   class ContinuousSlider {
     constructor(containerId) {
       this.container = document.getElementById(containerId);
@@ -113,14 +111,11 @@ document.addEventListener('DOMContentLoaded', () => {
       this.speedSlider = document.getElementById('speedSlider');
       this.speedValue = document.getElementById('speedValue');
 
-      // Configuration
       this.isPlaying = true;
-      this.direction = -1; // -1 for right to left, 1 for left to right
-      this.baseSpeed = 50; // Base speed in milliseconds
+      this.direction = -1; // Right to left
+      this.baseSpeed = 50;
       this.currentTranslate = 0;
       this.animationId = null;
-
-      // Touch/Mouse handling
       this.isDragging = false;
       this.startX = 0;
       this.currentX = 0;
@@ -130,6 +125,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     init() {
+      if (!this.container || !this.track || !this.playPauseBtn || !this.directionBtn || !this.speedSlider || !this.speedValue) {
+        console.error('One or more slider elements not found');
+        return;
+      }
       this.duplicateFlags();
       this.setupEventListeners();
       this.updateSpeedDisplay();
@@ -139,9 +138,8 @@ document.addEventListener('DOMContentLoaded', () => {
     duplicateFlags() {
       const originalFlags = this.track.innerHTML;
       this.track.innerHTML = originalFlags + originalFlags + originalFlags;
-
-      const flagWidth = 180; // 160px width + 20px gap
-      const flagCount = 9; // Original number of flags
+      const flagWidth = 180;
+      const flagCount = 9;
       this.currentTranslate = -(flagWidth * flagCount);
       this.track.style.transform = `translateX(${this.currentTranslate}px)`;
     }
@@ -151,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
       this.directionBtn.addEventListener('click', () => this.toggleDirection());
       this.speedSlider.addEventListener('input', () => this.updateSpeed());
 
-      this.container.addEventListener('mouseenter', () => this.pauseOnHover());
+      this.container.addEventListener('mouseenter', () => this.pauseAnimation());
       this.container.addEventListener('mouseleave', () => this.resumeOnLeave());
       this.container.addEventListener('mousedown', (e) => this.handleStart(e));
       this.container.addEventListener('mousemove', (e) => this.handleMove(e));
@@ -180,8 +178,6 @@ document.addEventListener('DOMContentLoaded', () => {
       this.currentX = this.getPositionX(e);
       const deltaX = this.currentX - this.startX;
       this.currentTranslate = this.startTranslate + deltaX;
-
-      this.track.classList.add('no-transition');
       this.track.style.transform = `translateX(${this.currentTranslate}px)`;
     }
 
@@ -189,7 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!this.isDragging) return;
       this.isDragging = false;
       this.container.style.cursor = 'grab';
-      this.track.classList.remove('no-transition');
       this.checkBounds();
       if (this.isPlaying) this.startAnimation();
     }
@@ -220,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
     startAnimation() {
       if (!this.isPlaying || this.isDragging) return;
       const animate = () => {
-        this.currentTranslate += this.direction * 0.5;
+        this.currentTranslate += this.direction * (parseInt(this.speedSlider.value) * 0.3);
         this.track.style.transform = `translateX(${this.currentTranslate}px)`;
         this.checkBounds();
         if (this.isPlaying && !this.isDragging) this.animationId = requestAnimationFrame(animate);
@@ -234,26 +229,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const resetPoint = flagWidth * flagCount;
       if (this.currentTranslate <= -resetPoint * 2) {
         this.currentTranslate = -resetPoint;
-        this.track.classList.add('no-transition');
         this.track.style.transform = `translateX(${this.currentTranslate}px)`;
-        requestAnimationFrame(() => this.track.classList.remove('no-transition'));
       } else if (this.currentTranslate >= 0) {
         this.currentTranslate = -resetPoint;
-        this.track.classList.add('no-transition');
         this.track.style.transform = `translateX(${this.currentTranslate}px)`;
-        requestAnimationFrame(() => this.track.classList.remove('no-transition'));
       }
     }
 
     pauseAnimation() {
-      if (this.animationId) {
-        cancelAnimationFrame(this.animationId);
-        this.animationId = null;
-      }
-    }
-
-    pauseOnHover() {
-      this.pauseAnimation();
+      if (this.animationId) cancelAnimationFrame(this.animationId);
     }
 
     resumeOnLeave() {
@@ -265,7 +249,6 @@ document.addEventListener('DOMContentLoaded', () => {
       this.playPauseBtn.textContent = this.isPlaying ? '⏸️' : '▶️';
       this.playPauseBtn.setAttribute('aria-label', this.isPlaying ? 'إيقاف التشغيل التلقائي' : 'تشغيل التشغيل التلقائي');
       if (this.isPlaying) this.startAnimation();
-      else this.pauseAnimation();
     }
 
     toggleDirection() {
@@ -282,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const speed = parseInt(this.speedSlider.value);
       const speedLabels = ['بطيء جداً', 'بطيء', 'متوسط', 'سريع', 'سريع جداً'];
       this.speedValue.textContent = speedLabels[speed - 1];
-      this.direction = this.direction > 0 ? speed * 0.3 : -speed * 0.3;
+      this.startAnimation(); // Restart animation with new speed
     }
 
     updateSpeedDisplay() {
@@ -292,19 +275,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Initialize Continuous Slider
-  new ContinuousSlider('clientSlider');
-
-  // Handle window resize
-  window.addEventListener('resize', () => {
-    const slider = document.querySelector('.continuous-slider');
-    if (slider) {
-      // Handle responsive adjustments if needed
-    }
-  });
-
-  // Initialize all components
+  // Initialize Components
   loadSharedComponents();
   initHeroSlider();
   initProgressBars();
+  new ContinuousSlider('clientSlider');
+
+  // Prevent right-click on images
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+      alert('عذرًا، لا يمكن تحميل الصور مباشرة. تواصل معنا للحصول على المحتوى!');
+    });
+  });
+
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    const slider = document.querySelector('.client-slider');
+    if (slider) {
+      // Reset slider position on resize if needed
+      slider.style.transform = 'none';
+      new ContinuousSlider('clientSlider'); // Reinitialize slider
+    }
+  });
 });

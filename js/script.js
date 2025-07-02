@@ -168,3 +168,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   typeWriter();
 });
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // منع النقر الأيمن على الصور
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('contextmenu', (e) => {
+        e.preventDefault(); // منع القائمة السياقية
+        alert('عذرًا، لا يمكن تحميل الصور مباشرة. تواصل معنا للحصول على المحتوى!'); // تنبيه اختياري
+      });
+    });
+
+    // منع النقر الأيمن على الصفحة بأكملها (اختياري)
+    document.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+    });
+  });
