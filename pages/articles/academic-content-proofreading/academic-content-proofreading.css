@@ -40,6 +40,7 @@ body {
       overflow: hidden;
       min-height: 300px;
       border-bottom: 4px solid var(--accent-color);
+      margin-top: 5.5rem;
     }
 
     /* Static Title */
@@ -151,6 +152,9 @@ body {
 
     /* Responsive Design */
     @media (max-width: 768px) {
+    .article-header{
+      margin-top: 50px;
+    }
       .article-header h1 { font-size: 2.4rem; }
       .article-header .subtitle { font-size: 1.1rem; }
       .article-header::before { width: 80px; height: 80px; }
