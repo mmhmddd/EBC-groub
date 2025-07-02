@@ -210,25 +210,60 @@
     </div>
   </div>
 </section>
-<section class="about-us-slider">
-  <div class="container">
-    <h2 class="section-title">نعمل مع عملاء في جميع أنحاء الدول العربية</h2>
-    <p class="intro-text">فتخر بخدمة عملاء من مختلف الدول العربية، مقدمين حلولًا احترافية تناسب احتياجاتهم المتعددة. من المغرب إلى الخليج، نحن هنا لدعم رحلتكم نحو النجاح.</p>
-    <div class="client-slider">
-      <div class="slider-container" id="clientSlider">
-        <div class="flag-item"><img src="/assets/images/about/Bahrainflag.jpg" alt="Bahrain"></div>
-        <div class="flag-item"><img src="/assets/images/about/Jordanflag.jpg" alt="Jordan"></div>
-        <div class="flag-item"><img src="/assets/images/about/Kuwaitflag.jpg" alt="Kuwait"></div>
-        <div class="flag-item"><img src="/assets/images/about/Omanflag.jpg" alt="Oman"></div>
-        <div class="flag-item"><img src="/assets/images/about/soudia.jpg" alt="Saudi Arabia"></div>
-        <div class="flag-item"><img src="/assets/images/about/emaratflag.jpg" alt="UAE"></div>
-        <div class="flag-item"><img src="/assets/images/about/egyptflag (1).jpg" alt="Egypt"></div>
-        <div class="flag-item"><img src="/assets/images/about/moroco.jpg" alt="Morocco"></div>
-        <div class="flag-item"><img src="/assets/images/about/tunisflag.jpg" alt="Tunisia"></div>
-      </div>
-    </div>
-  </div>
-</section>
+  <section class="about-us-slider">
+        <div class="container">
+            <h2 class="section-title">نعمل مع عملاء في جميع أنحاء الدول العربية</h2>
+            <p class="intro-text">نفتخر بخدمة عملاء من مختلف الدول العربية، مقدمين حلولًا احترافية تناسب احتياجاتهم المتعددة. من المغرب إلى الخليج، نحن هنا لدعم رحلتكم نحو النجاح.</p>
+            
+            <div class="client-slider" id="clientSlider">
+                <div class="slider-track" id="sliderTrack">
+                    <!-- Original flags -->
+                    <div class="flag-item" tabindex="0" role="img" aria-label="البحرين">
+                        <img src="https://flagcdn.com/w320/bh.jpg" alt="Bahrain" loading="lazy">
+                    </div>
+                    <div class="flag-item" tabindex="0" role="img" aria-label="الأردن">
+                        <img src="https://flagcdn.com/w320/jo.jpg" alt="Jordan" loading="lazy">
+                    </div>
+                    <div class="flag-item" tabindex="0" role="img" aria-label="الكويت">
+                        <img src="https://flagcdn.com/w320/kw.jpg" alt="Kuwait" loading="lazy">
+                    </div>
+                    <div class="flag-item" tabindex="0" role="img" aria-label="عُمان">
+                        <img src="https://flagcdn.com/w320/om.jpg" alt="Oman" loading="lazy">
+                    </div>
+                    <div class="flag-item" tabindex="0" role="img" aria-label="السعودية">
+                        <img src="https://flagcdn.com/w320/sa.jpg" alt="Saudi Arabia" loading="lazy">
+                    </div>
+                    <div class="flag-item" tabindex="0" role="img" aria-label="الإمارات">
+                        <img src="https://flagcdn.com/w320/ae.jpg" alt="UAE" loading="lazy">
+                    </div>
+                    <div class="flag-item" tabindex="0" role="img" aria-label="مصر">
+                        <img src="https://flagcdn.com/w320/eg.jpg" alt="Egypt" loading="lazy">
+                    </div>
+                    <div class="flag-item" tabindex="0" role="img" aria-label="المغرب">
+                        <img src="https://flagcdn.com/w320/ma.jpg" alt="Morocco" loading="lazy">
+                    </div>
+                    <div class="flag-item" tabindex="0" role="img" aria-label="تونس">
+                        <img src="https://flagcdn.com/w320/tn.jpg" alt="Tunisia" loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-controls">
+                <button class="control-btn play-pause-btn" id="playPauseBtn" title="إيقاف/تشغيل" aria-label="إيقاف/تشغيل التشغيل التلقائي">
+                    ⏸️
+                </button>
+                <button class="control-btn direction-btn" id="directionBtn" title="تغيير الاتجاه" aria-label="تغيير اتجاه التمرير">
+                    ⬅️
+                </button>
+            </div>
+
+            <div class="speed-control">
+                <label for="speedSlider" style="color: var(--ebc-blue); font-weight: 600;">سرعة التمرير:</label>
+                <input type="range" id="speedSlider" class="speed-slider form-range" min="1" max="5" value="3" aria-label="التحكم في سرعة التمرير">
+                <span id="speedValue" style="color: var(--ebc-blue); font-weight: 600;">متوسط</span>
+            </div>
+        </div>
+    </section>
 
     <!-- Call to Action Section -->
     <section class="call-action">

@@ -198,11 +198,11 @@ body::after {
 
 .featured-card {
   background: #f9fafb;
-  border-radius: var(--border-radius);
   padding: 1.5rem;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--ebc-blue);
   transition: transform var(--transition-normal), box-shadow var(--transition-normal);
   height: 100%;
+  border: #000 2px solid;
 }
 
 .featured-card:hover {
@@ -400,6 +400,8 @@ body::after {
   border-radius: var(--border-radius);
   padding: 2rem;
   box-shadow: var(--shadow-md);
+  border: #14B8A6 2px solid !important ;
+
 }
 
 .feature-image img {
@@ -436,13 +438,6 @@ body::after {
 .feature-buttons {
   display: flex;
   gap: 1rem;
-}
-
-.divider {
-  border: 0;
-  height: 1px;
-  background: #e5e7eb;
-  margin: 2rem 0;
 }
 
 /* ===== 10. زر العودة إلى الأعلى ===== */
@@ -520,7 +515,6 @@ body::after {
   }
   .feature-image img {
     max-width: 100%;
-    margin-bottom: 1.5rem;
   }
   .feature-title {
     font-size: 1.5rem;

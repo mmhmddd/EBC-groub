@@ -19,11 +19,6 @@ body {
   direction: rtl;
 }
 
-/* Main Content */
-.main-content {
-  padding-top: 80px; /* Adjust for fixed navbar height */
-}
-
 /* Hero Section */
 .contact-hero {
   background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));

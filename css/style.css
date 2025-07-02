@@ -346,6 +346,7 @@ main {
   .hero {
     min-height: 80vh;
     padding: 3rem 1rem;
+    background-size: cover;
   }
   .hero-content {
     flex-direction: column;
