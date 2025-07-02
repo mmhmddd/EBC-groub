@@ -54,6 +54,8 @@ body {
   position: relative;
   overflow: hidden;
   direction: rtl;
+  margin-top: 100px !important;
+
 }
 .service-hero::before {
   content: '';

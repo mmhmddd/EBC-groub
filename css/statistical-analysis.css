@@ -22,6 +22,7 @@ body {
   direction: rtl;
   text-align: right;
   line-height: 1.6;
+  
 }
 
 .section-separator {
@@ -58,6 +59,7 @@ body {
   position: relative;
   z-index: 10;
   box-shadow: var(--shadow-md);
+  
 }
 
 .header-title {
@@ -82,6 +84,8 @@ body {
   overflow: hidden;
   direction: rtl;
   box-shadow: var(--shadow-md);
+    margin-top: 150px !important;
+
 }
 .service-hero::before {
   content: '';

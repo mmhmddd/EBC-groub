@@ -1,4 +1,3 @@
-/* ===== المتغيرات والألوان الأساسية ===== */
 :root {
   --ebc-blue: #1E3A8A;
   --ebc-teal: #14B8A6;
@@ -14,6 +13,17 @@
   padding: 1rem 0;
   box-shadow: var(--shadow-sm);
   font-family: 'Tajawal', sans-serif;
+  position: fixed; /* Fixed position at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff; /* Ensure background is solid when fixed */
+  z-index: 1000; /* Ensure it stays above other content */
+  transition: padding var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.navbar.scrolled {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow when scrolled */
 }
 
 .navbar .container {
@@ -252,6 +262,10 @@
 
   .dropdown-toggle:hover::after {
     border-top-color: var(--ebc-blue);
+  }
+
+  .navbar.scrolled {
+    padding: 0.5rem 0; /* Maintain reduced padding on mobile */
   }
 }
 

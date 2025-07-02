@@ -62,6 +62,8 @@ body {
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-md);
+  margin-top: 50px !important;
+
 }
 .service-hero::before {
   content: '';
