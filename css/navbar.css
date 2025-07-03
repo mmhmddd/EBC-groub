@@ -30,53 +30,55 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* توزيع العناصر بشكل متساوٍ */
-  max-width: 1200px; /* حد أقصى للعرض لتجنب التشتت */
-  margin: 0 auto; /* تمركز الحاوية */
-  padding: 0 1rem; /* تباعد داخلي ثابت */
+  justify-content: flex-start; /* تغيير إلى بداية الصف لتسهيل التحكم */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .navbar-brand {
-  margin-left: auto;
+  margin-left: auto; /* دفع الشعار إلى اليمين */
+  order: 3; /* جعل الشعار الأخير في الترتيب */
   display: flex;
   align-items: center;
 }
 
 .navbar-brand img {
-  height: 60px; /* زيادة حجم الشعار */
-  margin-right: 0.75rem; /* زيادة المسافة قليلاً */
+  height: 60px;
+  margin-right: 0.75rem;
 }
 
 .navbar-brand span p {
   margin: 0;
-  font-size: 1.5rem; /* زيادة حجم الخط */
+  font-size: 1.5rem;
   color: var(--ebc-blue);
-  font-weight: 600; /* زيادة الوزن للتميز */
+  font-weight: 600;
 }
 
 #navbarNav {
   flex-grow: 1;
+  order: 1; /* جعل القائمة في البداية */
   justify-content: center;
 }
 
 .navbar-nav {
   display: flex;
   align-items: center;
-  list-style: none; /* إزالة النقاط الافتراضية */
-  padding: 0; /* إزالة التباعد الداخلي */
+  list-style: none;
+  padding: 0;
 }
 
 .nav-item {
-  margin: 0 1.5rem; /* زيادة المسافة بين العناصر */
+  margin: 0 1.5rem;
   position: relative;
 }
 
 .nav-link {
   color: var(--ebc-gray);
-  font-size: 1.4rem; /* زيادة حجم الخط */
-  padding: 0.75rem 1rem; /* زيادة التباعد الداخلي */
+  font-size: 1.4rem;
+  padding: 0.75rem 1rem;
   position: relative;
-  text-decoration: none; /* إزالة التأثير الافتراضي */
+  text-decoration: none;
   transition: var(--transition-normal);
 }
 
@@ -88,7 +90,7 @@
   content: '';
   position: absolute;
   width: 0;
-  height: 3px; /* زيادة سمك الخط السفلي */
+  height: 3px;
   bottom: -8px;
   left: 50%;
   background-color: var(--ebc-teal);
@@ -110,7 +112,7 @@
   padding: 0.75rem 1rem;
   display: flex;
   align-items: center;
-  font-size: 1.4rem; /* زيادة حجم الخط */
+  font-size: 1.4rem;
   text-decoration: none;
 }
 
@@ -123,7 +125,7 @@
   display: inline-block;
   width: 0;
   height: 0;
-  margin-left: 0.75rem; /* زيادة المسافة */
+  margin-left: 0.75rem;
   vertical-align: middle;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
@@ -144,7 +146,7 @@
   border: 1px solid #eee;
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  min-width: 220px; /* زيادة العرض قليلاً */
+  min-width: 220px;
   padding: 0.75rem 0;
   z-index: 1000;
   opacity: 0;
@@ -161,7 +163,7 @@
 .dropdown-item {
   color: var(--ebc-gray);
   padding: 0.75rem 1.5rem;
-  font-size: 1.3rem; /* زيادة حجم الخط */
+  font-size: 1.3rem;
   transition: var(--transition-normal);
 }
 
@@ -174,10 +176,11 @@
 .log-btn {
   background-color: var(--ebc-teal);
   color: #fff;
-  padding: 0.75rem 2rem; /* زيادة التباعد */
-  border-radius: 30px; /* زيادة نعومة الحواف */
+  padding: 0.75rem 2rem;
+  border-radius: 30px;
   text-decoration: none;
-  font-size: 1.4rem; /* زيادة حجم الخط */
+  font-size: 1.4rem;
+  order: 2; /* وضع الزر بعد القائمة */
   transition: var(--transition-normal);
 }
 
@@ -192,7 +195,7 @@
   color: #fff;
   width: 100%;
   margin-top: 1rem;
-  font-size: 1.4rem; /* زيادة حجم الخط */
+  font-size: 1.4rem;
 }
 
 .btn-collapse:hover {
@@ -203,7 +206,7 @@
 @media (max-width: 992px) {
   .navbar-brand {
     margin-left: 0;
-    order: 2;
+    order: 3;
   }
 
   #navbarNav {
@@ -212,8 +215,9 @@
   }
 
   .log-btn {
-    order: 3;
+    order: 2;
     margin-left: 1rem;
+    display: none;
   }
 
   .navbar-toggler {
@@ -239,7 +243,7 @@
   .nav-link {
     padding: 1rem 1.5rem;
     width: 100%;
-    font-size: 1.5rem; /* زيادة حجم الخط في الشاشات الصغيرة */
+    font-size: 1.5rem;
   }
 
   .dropdown-menu {
@@ -259,11 +263,7 @@
 
   .dropdown-item {
     padding: 1rem 1.5rem;
-    font-size: 1.4rem; /* زيادة حجم الخط */
-  }
-
-  .log-btn {
-    display: none;
+    font-size: 1.4rem;
   }
 
   .btn-collapse {
