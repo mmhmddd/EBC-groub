@@ -28,15 +28,15 @@ body {
 }
 
 .image-slider {
-    width: 250%;
-    margin: 0;
-    overflow: hidden;
-    position: relative;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    margin-bottom: 25px;
-    left: -50px;
+  width: 200%; 
+  margin: 0 auto; 
+  overflow: hidden;
+  position: relative;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  margin-bottom: 25px;
+  left: -200px;
     
 }
 
@@ -47,13 +47,12 @@ body {
 }
 
 .slider-track img {
-    width: 300px;
-    height: 300px !important;
-    object-fit: cover;
-    flex-shrink: 0;
-    border: none;
-    margin: 12px;
-        height: 200px;
+  width: 300px;
+  height: 200px; 
+  object-fit: cover;
+  flex-shrink: 0;
+  border: none;
+  margin: 12px; 
 
 }
 
@@ -76,6 +75,10 @@ body {
     .slider-track {
         width: calc(250px * 10);
     }
+    .image-slider {
+        width: 100%;
+        left: 0; 
+      }
     
     .slider-track img {
         width: 250px;
@@ -119,27 +122,31 @@ body {
 }
 
 .services-hero {
-  text-align: center;
+ text-align: center;
   padding: 4rem 0;
   color: var(--ebc-blue);
-  max-width: 1400px;
-  margin: 0 ;
+  max-width: 100%;
+  margin: 0 auto; 
+  width: 100%; 
 }
 
 .hero-title {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 3.8rem;
+  margin: 0 auto 1rem auto; 
   animation: fadeInUp 1s ease-out;
   transition: var(--transition-normal);
+  width: 100%; 
+  text-align: center;
 }
 
 .hero-subtitle {
-  font-size: 1.3rem;
+  font-size: 2rem;
   color: var(--text-gray);
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto; 
   animation: fadeInUp 1.2s ease-out;
   transition: var(--transition-normal);
+  text-align: center; 
 }
 
 .services-grid {
@@ -313,116 +320,3 @@ body {
   }
 }
 
-/* Center the hero section and remove extra spacing */
-.services-hero {
-  text-align: center;
-  padding: 4rem 0;
-  color: var(--ebc-blue);
-  max-width: 100%; /* Use full width of the container */
-  margin: 0 auto; /* Ensure centering */
-  width: 100%; /* Explicitly set width to 100% */
-}
-
-/* Center the title and subtitle explicitly */
-.hero-title {
-  font-size: 3rem;
-  margin: 0 auto 1rem auto; /* Center with auto margins */
-  animation: fadeInUp 1s ease-out;
-  transition: var(--transition-normal);
-  width: 100%; /* Ensure it spans the container */
-  text-align: center; /* Reinforce centering */
-}
-
-.hero-subtitle {
-  font-size: 1.3rem;
-  color: var(--text-gray);
-  max-width: 800px;
-  margin: 0 auto; /* Center with auto margins */
-  animation: fadeInUp 1.2s ease-out;
-  transition: var(--transition-normal);
-  text-align: center; /* Reinforce centering */
-}
-
-/* Fix the slider to remove side spacing */
-.image-slider {
-  width: 200%; /* Set to container width */
-  margin: 0 auto; /* Center the slider */
-  overflow: hidden;
-  position: relative;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  margin-bottom: 25px;
-  left: -200px;
-}
-
-/* Adjust slider track for proper width */
-.slider-track {
-  display: flex;
-  width: calc(300px * 10); /* Keep the width for 10 images */
-  animation: slide 15s linear infinite;
-}
-
-.slider-track img {
-  width: 300px;
-  height: 200px; /* Simplified to single height value */
-  object-fit: cover;
-  flex-shrink: 0;
-  border: none;
-  margin: 12px; /* Keep margin for spacing between images */
-}
-
-/* Animation remains unchanged */
-@keyframes slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-1500px); /* Move by width of 5 images (5 × 300px) */
-  }
-}
-
-.slider-track:hover {
-  animation-play-state: paused;
-}
-
-/* Responsive design adjustments */
-@media (max-width: 768px) {
-  .slider-track {
-    width: calc(250px * 10);
-  }
-  
-  .slider-track img {
-    width: 250px;
-    height: 167px;
-  }
-  
-  @keyframes slide {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-1250px);
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .slider-track {
-    width: calc(200px * 10);
-  }
-  
-  .slider-track img {
-    width: 200px;
-    height: 133px;
-  }
-  
-  @keyframes slide {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-1000px);
-    }
-  }
-}
