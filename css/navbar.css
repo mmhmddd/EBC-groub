@@ -40,6 +40,11 @@
   margin-left: auto;
   display: flex;
   align-items: center;
+  position: relative;
+  right: -60px;
+}
+.contact-btn{
+  left: -60px;
 }
 
 .navbar-brand img {
