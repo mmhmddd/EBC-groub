@@ -28,7 +28,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  
 }
 
 main {
@@ -77,19 +76,17 @@ main {
   padding-bottom: 1rem !important;
 }
 
-
-
 /* ===== قسم البطل ===== */
 .hero {
   position: relative;
   background-image: url('/assets/images/home/hero_image2.webp');
   background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-  padding: 5rem 0;
+  background-position: center;
+  background-size: cover;
+  padding: 6rem 0;
   min-height: 100vh;
-  overflow: visible;
-  margin-top: 50px !important;
+  display: flex;
+  align-items: center;
 }
 
 .hero::before {
@@ -99,77 +96,75 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 100%);
   z-index: 1;
 }
 
-.hero-content {
+.hero-wrapper {
   position: relative;
   z-index: 2;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
   align-items: flex-start;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-  padding-bottom: 200px;
+  padding-bottom: 4rem;
 }
 
 .hero-text {
-  max-width: 50%;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .hero-subtitle {
   display: block;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   background: linear-gradient(90deg, var(--light-teal) 0%, var(--secondary-teal) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 
 .hero-title {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   color: white;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-description {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: #E5E7EB;
-  margin-bottom: 1.5rem;
-  max-width: 90%;
+  margin-bottom: 2rem;
+  max-width: 85%;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 #btn-services {
   background-color: var(--light-teal);
   color: white;
-  padding: 0.5rem 2.5rem;
+  padding: 0.75rem 2.5rem;
   border: none;
-  border-radius: 7px;
+  border-radius: 8px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
   position: relative;
   overflow: hidden;
   text-decoration: none;
+  font-size: 1.1rem;
 }
 
 #btn-services:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   background-color: var(--secondary-teal);
-  box-shadow: 0 0 15px var(--glow-color), 0 0 30px var(--glow-color), inset 0 0 10px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 20px var(--glow-color), 0 0 40px var(--glow-color), inset 0 0 15px rgba(255, 255, 255, 0.4);
 }
 
 #btn-services::before {
@@ -179,7 +174,7 @@ main {
   left: 50%;
   width: 0;
   height: 0;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   transition: width 0.6s ease, height 0.6s ease;
@@ -199,36 +194,33 @@ main {
 .btn-secondary {
   background-color: rgba(255, 255, 255, 0.2);
   color: white;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  padding: 0.5rem 2.5rem;
-  border-radius: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 0.75rem 2.5rem;
+  border-radius: 8px;
   transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
   text-decoration: none;
+  font-size: 1.1rem;
 }
 
 .btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-3px);
 }
 
 /* ===== بطاقات الخدمات ===== */
 .service-cards {
-  display: flex;
-  gap: 1.5rem;
-  position: absolute;
-  bottom: -150px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  width: 80%;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 200px); /* اثنان في الصف بعرض 200px لكل بطاقة */
+  gap: 2rem;
+  padding-top: 2rem;
+  justify-content: center; /* محاذاة الخلايا في المنتصف */
 }
 
 .service-card {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(30, 58, 138, 0.1));
   border-radius: 15px;
-  padding: 2rem;
-  width: 220px;
+  padding: 1.5rem;
+  width: 200px; /* عرض ثابت 200px */
   height: 300px;
   text-align: center;
   color: var(--ebc-light);
@@ -257,7 +249,7 @@ main {
   font-size: 1rem;
   color: var(--ebc-light);
   flex-grow: 1;
-  height: 10px;
+  overflow: hidden;
 }
 
 .card-link {
@@ -314,26 +306,35 @@ main {
 }
 
 /* ===== الأشكال الخلفية ===== */
-.hero-shape-1 {
+.hero-shapes {
   position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-shape-1,
+.hero-shape-2 {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.hero-shape-1 {
   top: 10%;
   left: 5%;
   width: 150px;
   height: 150px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
   filter: blur(10px);
   animation: float 6s infinite ease-in-out;
 }
 
 .hero-shape-2 {
-  position: absolute;
   bottom: 10%;
   right: 5%;
   width: 200px;
   height: 200px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
   filter: blur(15px);
   animation: float 8s infinite ease-in-out reverse;
 }
@@ -344,87 +345,110 @@ main {
 }
 
 /* ===== استجابة ===== */
-@media (max-width: 768px) {
-  .hero {
-    min-height: 80vh;
-    padding: 3rem 1rem;
-    background-size: cover;
-  }
-  .hero-content {
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 100px;
-    gap: 1.5rem;
+@media (max-width: 1024px) {
+  .hero-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
   .hero-text {
     max-width: 100%;
     text-align: center;
-    padding: 0;
-  }
-  .hero-subtitle {
-    font-size: 1rem;
-    letter-spacing: 0.8px;
   }
   .hero-title {
-    font-size: 1.8rem;
-    line-height: 1.3;
-    white-space: normal;
+    font-size: 3rem;
+  }
+  .hero-description {
+    font-size: 1.2rem;
+    max-width: 100%;
+  }
+  .service-cards {
+    grid-template-columns: repeat(2, 200px); /* الحفاظ على اثنين في الصف */
+    gap: 1.5rem;
+  }
+  .service-card {
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    margin: 0;
+    margin-top: 80px;
+    padding: 4rem 0;
+    min-height: 80vh;
+  
+  }
+  .hero-title {
+    font-size: 2.5rem;
   }
   .hero-description {
     font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-    max-width: 100%;
   }
   .hero-buttons {
     flex-direction: column;
     gap: 1rem;
-    width: 100%;
   }
-  #btn-services, .btn-secondary {
+  #btn-services,
+  .btn-secondary {
     width: 100%;
     padding: 0.75rem 1.5rem;
-    font-size: 1.1rem;
-    text-align: center;
+    font-size: 1rem;
   }
-  .service-cards {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    width: 100%;
-    position: static;
-    bottom: 0;
-    transform: none;
-    margin-top: 1.5rem;
-    gap: 1rem;
-    justify-content: center; /* Center the cards */
-  }
+
   .service-card {
-    width: 45%; /* Approximately half width for two per row */
-    max-width: 250px; /* Cap width for smaller screens */
-    height: 280px; /* Reduced height */
-    padding: 1.2rem; /* Reduced padding */
-    margin-bottom: 1rem;
+    width: 100%; /* عرض ديناميكي */
+    max-width: 200px; /* الحد الأقصى 200px */
+    height: 260px;
+    padding: 1rem;
   }
   .service-card i {
-    font-size: 1.8rem; /* Reduced icon size */
+    font-size: 1.8rem;
   }
   .service-card h3 {
-    font-size: 1.2rem; /* Reduced heading size */
+    font-size: 1.2rem;
   }
   .service-card p {
-    font-size: 0.85rem; /* Reduced text size */
-    height: auto;
-    flex-grow: 1;
-  }
-  .card-link {
-    margin-top: 0.5rem;
+    font-size: 0.9rem;
   }
   .card-link a {
-    font-size: 0.85rem; /* Reduced link text size */
+    font-size: 0.9rem;
   }
-  .hero-shape-1, .hero-shape-2 {
+  .hero-shape-1,
+  .hero-shape-2 {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 3rem 0;
+    min-height: 70vh;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-description {
+    font-size: 0.95rem;
+  }
+  #btn-services,
+  .btn-secondary {
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+  }
+  .service-card {
+    height: 240px;
+  }
+  .service-card i {
+    font-size: 1.5rem;
+  }
+  .service-card h3 {
+    font-size: 1.1rem;
+  }
+  .service-card p {
+    font-size: 0.85rem;
+  }
+  .card-link a {
+    font-size: 0.85rem;
   }
 }
 .feature-area {
