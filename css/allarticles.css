@@ -84,9 +84,8 @@ body::after {
 }
 
 .carousel-item img {
-  width: 100%;
+  width: 800%;
   height: 100%;
-  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
@@ -106,6 +105,7 @@ body::after {
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-md);
   transition: var(--transition-normal);
+
 }
 
 .carousel-item:hover .carousel-caption {
@@ -130,6 +130,7 @@ body::after {
   width: 5%;
   opacity: 0.7;
   transition: opacity var(--transition-normal);
+  justify-content: space-between;
 }
 
 .carousel-control-prev:hover,
