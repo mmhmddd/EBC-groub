@@ -89,20 +89,28 @@ body {
 
 .services-hero .overlay-text {
   position: absolute;
-  bottom: 10px;
+  bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.7);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 100, 0.6)); /* Gradient background */
   color: white;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 1rem;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
   text-align: center;
-  width: 80%;
-  height: 120px;
+  width: 85%;
+  max-height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.9;
+}
+
+.services-hero .slide:hover .overlay-text {
+  transform: translateX(-50%) scale(1.05); /* Slight scale on hover */
+  opacity: 1;
 }
 
 .services-hero .slider-track:hover {
@@ -136,10 +144,10 @@ body {
     height: 167px;
   }
   .services-hero .overlay-text {
-    font-size: 0.9rem;
-    width: 85%;
-    height: 100px;
-    padding: 8px;
+    font-size: 0.95rem;
+    width: 90%;
+    max-height: 80px;
+    padding: 10px 12px;
   }
   @keyframes slide {
     0% {
@@ -164,10 +172,10 @@ body {
     height: 133px;
   }
   .services-hero .overlay-text {
-    font-size: 0.8rem;
-    width: 90%;
-    height: 80px;
-    padding: 6px;
+    font-size: 0.85rem;
+    width: 95%;
+    max-height: 60px;
+    padding: 8px 10px;
   }
   @keyframes slide {
     0% {
@@ -177,40 +185,6 @@ body {
       transform: translateX(-1000px);
     }
   }
-}
-
-
-.main-content {
-  padding-bottom: 4rem;
-  margin-top: 0;
-}
-
-.services-hero {
-  text-align: center;
-  padding: 4rem 0;
-  color: var(--ebc-blue);
-  max-width: 100%;
-  margin: 0 auto; 
-  width: 100%; 
-}
-
-.hero-title {
-  font-size: 3.8rem;
-  margin: 0 auto 1rem auto; 
-  animation: fadeInUp 1s ease-out;
-  transition: var(--transition-normal);
-  width: 100%; 
-  text-align: center;
-}
-
-.hero-subtitle {
-  font-size: 2rem;
-  color: var(--text-gray);
-  max-width: 800px;
-  margin: 0 auto; 
-  animation: fadeInUp 1.2s ease-out;
-  transition: var(--transition-normal);
-  text-align: center; 
 }
 .services-grid {
   display: grid;

@@ -913,7 +913,7 @@ main {
   font-weight: 700;
   margin-bottom: 1rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  color: var(--ebc-gold) !important;
+  color: var(--ebc-light) !important;
 }
 
 .start-project-section-subtitle {
@@ -1306,17 +1306,6 @@ main {
   .nav-next {
     right: 0;
   }
-}
-
-/* Add missing variables if not defined elsewhere */
-:root {
-  --ebc-gray: #6B7280;
-  --ebc-dark: #1F2937;
-  --ebc-light: #F9FAFB;
-  --ebc-teal: #14B8A6;
-  --primary-blue: #1E3A8A;
-  --ebc-gold: #FFD700;
-  --transition-normal: 0.3s ease-in-out;
 }
     .ebc-blog-area {
       background: var(--ebc-light);

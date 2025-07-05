@@ -52,50 +52,52 @@
     </div>
   </div>
 </section>
-
-    <section class="contact-form py-5">
-      <div class="container">
-        <h2 class="text-center mb-4">أرسل لنا رسالة</h2>
-        <form id="contact-form" class="needs-validation" novalidate>
-          <div class="row g-3">
-            <div class="col-md-6">
-              <label for="name" class="form-label">الاسم *</label>
-              <input type="text" class="form-control" id="name" name="name" required>
-              <div class="invalid-feedback">يرجى إدخال الاسم.</div>
-            </div>
-            <div class="col-md-6">
-              <label for="email" class="form-label">البريد الإلكتروني *</label>
-              <input type="email" class="form-control" id="email" name="email" required>
-              <div class="invalid-feedback">يرجى إدخال بريد إلكتروني صالح.</div>
-            </div>
-            <div class="col-12">
-              <label for="phone" class="form-label">رقم الهاتف</label>
-              <input type="tel" class="form-control" id="phone" name="phone">
-            </div>
-            <div class="col-12">
-              <label for="service" class="form-label">الخدمة المطلوبة</label>
-              <select class="form-control" id="service" name="service">
-                <option value="">اختر الخدمة</option>
-                <option value="statistical-analysis">التحليل الإحصائي والقياسي والمالي</option>
-                <option value="translation">خدمات الترجمة المعتمدة</option>
-                <option value="training-packages">إعداد الحقائب التدريبية</option>
-                <option value="proofreading">التدقيق اللغوي</option>
-                <option value="other">أخرى</option>
-              </select>
-            </div>
-            <div class="col-12">
-              <label for="message" class="form-label">الرسالة *</label>
-              <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-              <div class="invalid-feedback">يرجى إدخال الرسالة.</div>
-            </div>
-            <div class="col-12 text-center">
-              <button type="submit" class="btn-submit">إرسال الرسالة</button>
-              <div id="form-status" class="mt-2" style="display: none;"></div>
-            </div>
-          </div>
-        </form>
+<section class="contact-form py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">أرسل لنا رسالة</h2>
+    <form id="contact-form" class="needs-validation" novalidate>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="name" class="form-label">الاسم *</label>
+          <input type="text" class="form-control" id="name" name="name" required>
+          <div class="invalid-feedback"></div>
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label">البريد الإلكتروني *</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+          <div class="invalid-feedback"></div>
+        </div>
+        <div class="col-12">
+          <label for="phone" class="form-label">رقم الهاتف *</label>
+          <input type="tel" class="form-control" id="phone" name="phone" required>
+          <div class="invalid-feedback"></div>
+        </div>
+        <div class="col-12">
+          <label for="service" class="form-label">الخدمة المطلوبة</label>
+          <select class="form-control" id="service" name="service" required>
+            <option value="">اختر الخدمة</option>
+            <option value="statistical-analysis">التحليل الإحصائي والقياسي والمالي</option>
+            <option value="translation">خدمات الترجمة المعتمدة</option>
+            <option value="training-packages">إعداد الحقائب التدريبية</option>
+            <option value="proofreading">التدقيق اللغوي</option>
+            <option value="proofreading">كتابه المحتوي</option>
+            <option value="other">أخرى</option>
+          </select>
+          <div class="invalid-feedback"></div>
+        </div>
+        <div class="col-12">
+          <label for="message" class="form-label">الرسالة *</label>
+          <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+          <div class="invalid-feedback"></div>
+        </div>
+        <div class="col-12 text-center">
+          <button type="submit" class="btn-submit">إرسال الرسالة إلى WhatsApp</button>
+          <div id="form-status" class="mt-2" style="display: none;"></div>
+        </div>
       </div>
-    </section>
+    </form>
+  </div>
+</section>
 
     <section class="map-section">
       <div class="container">
@@ -107,72 +109,83 @@
       </div>
     </section>
 
-    <section class="faq-section">
-      <div class="container">
-        <h2 class="text-center mb-4">الأسئلة الشائعة</h2>
-        <div class="faq-container">
-          <div class="accordion" id="faqAccordion">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  ما هي مدة تنفيذ خدمات التحليل الإحصائي؟
-                </button>
-              </h2>
-              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  تعتمد مدة التنفيذ على حجم البيانات وتعقيدها. نحدد الوقت بعد مناقشة متطلباتك.
-                </div>
-              </div>
+<section class="faq-section">
+  <div class="container">
+    <h2 class="text-center mb-4">الأسئلة الشائعة</h2>
+    <div class="faq-container">
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              ما هي مدة تنفيذ خدمات التحليل الإحصائي؟
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              تعتمد مدة التنفيذ على حجم البيانات وتعقيدها. نحدد الوقت بعد مناقشة متطلباتك.
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  هل تقدمون ترجمة لجميع اللغات؟
-                </button>
-              </h2>
-              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  نقدم ترجمة للغات متعددة. تواصل معنا لتأكيد اللغة المطلوبة.
-                </div>
-              </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              هل تقدمون ترجمة لجميع اللغات؟
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              نقدم ترجمة للغات متعددة. تواصل معنا لتأكيد اللغة المطلوبة.
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  كيف أطلب حقيبة تدريبية؟
-                </button>
-              </h2>
-              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  املأ النموذج أو اتصل بنا لتحديد احتياجاتك، وسنصممها حسب طلبك.
-                </div>
-              </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              كيف أطلب حقيبة تدريبية؟
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              املأ النموذج أو اتصل بنا لتحديد احتياجاتك، وسنصممها حسب طلبك.
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingFour">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                  ما الفرق بين التدقيق والتحرير؟
-                </button>
-              </h2>
-              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  التدقيق يركز على الأخطاء النحوية، بينما التحرير يحسن الأسلوب والوضوح.
-                </div>
-              </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              ما الفرق بين التدقيق والتحرير؟
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              التدقيق يركز على الأخطاء النحوية، بينما التحرير يحسن الأسلوب والوضوح.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFive">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+              ما هي خطوات كتابة المحتوى؟
+            </button>
+          </h2>
+          <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              خطوات كتابة المحتوى تشمل: استشارة العميل لتحديد الاحتياجات، إعداد مخطط أولي، كتابة المسودة الأولية، مراجعتها مع العميل، ثم التعديل النهائي لتلبية المعايير المطلوبة.
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <section class="py-5 text-center">
       <h2 class="mb-3">تابعنا</h2>
       <div class="social-links">
-        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100067059062489" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/EBCGroub" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
         <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
       </div>
     </section>
   </main>
