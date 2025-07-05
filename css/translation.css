@@ -128,9 +128,10 @@ body {
   color: #444;
 }
 
-.btn, .btn-article {
+
+.btn-hero {
   display: inline-block;
-  padding: 15px 25px;
+  padding: 12px 25px;
   font-size: 1.1rem;
   color: #fff;
   background: var(--secondary-teal);
@@ -139,22 +140,29 @@ body {
   transition: var(--transition-normal);
   box-shadow: var(--shadow-md);
   font-weight: 600;
-  margin: 20px;
+
+  &:hover {
+    background: var(--light-teal);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+  }
 }
 
-.btn:hover, .btn-article:hover {
+
+.btn-hero:hover, .btn-article:hover {
   background: var(--light-teal);
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
   color: #F9FAFB;
 }
 
-.btn-article {
+.btn-article , .btn-hero {
   display: flex;
   justify-content: center;
   width: 14rem;
   margin: 1rem auto;
   align-items: center;
+  text-decoration: none !important;
 }
 
 .service-description, .languages-section, .why-choose-us, .related-articles, .cta {
@@ -254,6 +262,7 @@ body {
   background: rgba(30, 58, 138, 0.1);
   border-radius: 20px;
   margin-top: 1rem;
+  text-decoration: none;
 }
 
 .read-more:hover, .view-all-articles .btn:hover {
