@@ -26,10 +26,37 @@ body {
     margin-top: 50px !important;
 
 }
+.services-hero {
+  text-align: center;
+  padding: 4rem 0;
+  color: var(--ebc-blue);
+  max-width: 100%;
+  margin: 0 auto;
+  width: 100%;
+}
 
-.image-slider {
-  width: 200%; 
-  margin: 0 auto; 
+.services-hero .hero-title {
+  font-size: 3.8rem;
+  margin: 0 auto 1rem auto;
+  animation: fadeInUp 1s ease-out;
+  transition: var(--transition-normal);
+  width: 100%;
+  text-align: center;
+}
+
+.services-hero .hero-subtitle {
+  font-size: 2rem;
+  color: var(--text-gray);
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeInUp 1.2s ease-out;
+  transition: var(--transition-normal);
+  text-align: center;
+}
+
+.services-hero .image-slider {
+  width: 200%;
+  margin: 0 auto;
   overflow: hidden;
   position: relative;
   background: white;
@@ -37,82 +64,119 @@ body {
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   margin-bottom: 25px;
   left: -200px;
-    
 }
 
-.slider-track {
-    display: flex;
-    width: calc(300px * 10); /* 5 images × 2 sets × 300px each */
-    animation: slide 15s linear infinite;
+.services-hero .slider-track {
+  display: flex;
+  width: calc(300px * 10); /* 5 images × 2 sets × 300px each */
+  animation: slide 15s linear infinite;
 }
 
-.slider-track img {
+.services-hero .slide {
+  position: relative;
   width: 300px;
-  height: 200px; 
-  object-fit: cover;
+  height: 200px;
   flex-shrink: 0;
-  border: none;
-  margin: 12px; 
+  margin: 12px;
+}
 
+.services-hero .slider-track img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border: none;
+}
+
+.services-hero .overlay-text {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: center;
+  width: 80%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-hero .slider-track:hover {
+  animation-play-state: paused;
 }
 
 @keyframes slide {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-1500px); /* Move by width of 5 images (5 × 300px) */
-    }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-1500px); /* Move by width of 5 images (5 × 300px) */
+  }
 }
-
-.slider-track:hover {
-    animation-play-state: paused;
-}
-
 
 /* Responsive design */
 @media (max-width: 768px) {
-    .slider-track {
-        width: calc(250px * 10);
+  .services-hero .slider-track {
+    width: calc(250px * 10);
+  }
+  .services-hero .image-slider {
+    width: 100%;
+    left: 0;
+  }
+  .services-hero .slide {
+    width: 250px;
+    height: 167px;
+  }
+  .services-hero .slider-track img {
+    width: 250px;
+    height: 167px;
+  }
+  .services-hero .overlay-text {
+    font-size: 0.9rem;
+    width: 85%;
+    height: 100px;
+    padding: 8px;
+  }
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
     }
-    .image-slider {
-        width: 100%;
-        left: 0; 
-      }
-    
-    .slider-track img {
-        width: 250px;
-        height: 167px;
+    100% {
+      transform: translateX(-1250px);
     }
-    
-    @keyframes slide {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(-1250px);
-        }
-    }
+  }
 }
 
 @media (max-width: 480px) {
-    .slider-track {
-        width: calc(200px * 10);
+  .services-hero .slider-track {
+    width: calc(200px * 10);
+  }
+  .services-hero .slide {
+    width: 200px;
+    height: 133px;
+  }
+  .services-hero .slider-track img {
+    width: 200px;
+    height: 133px;
+  }
+  .services-hero .overlay-text {
+    font-size: 0.8rem;
+    width: 90%;
+    height: 80px;
+    padding: 6px;
+  }
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
     }
-    
-    .slider-track img {
-        width: 200px;
-        height: 133px;
+    100% {
+      transform: translateX(-1000px);
     }
-    
-    @keyframes slide {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(-1000px);
-        }
-    }
+  }
 }
 
 
@@ -122,7 +186,7 @@ body {
 }
 
 .services-hero {
- text-align: center;
+  text-align: center;
   padding: 4rem 0;
   color: var(--ebc-blue);
   max-width: 100%;
@@ -148,7 +212,6 @@ body {
   transition: var(--transition-normal);
   text-align: center; 
 }
-
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));

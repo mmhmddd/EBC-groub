@@ -50,25 +50,27 @@
   <div id="navbar-placeholder"></div>
 
   <main>
-  <section class="hero" aria-label="قسم الترحيب الرئيسي">
-        <div class="container">
-            <div class="hero-wrapper">
+<section class="hero" aria-label="قسم الترحيب الرئيسي">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
                 <div class="hero-text fade-in" role="region" aria-label="نص الترحيب">
                     <span class="hero-subtitle">Economic Business Company</span>
                     <h1 class="hero-title">حلول متكاملة لجميع<br>خدمات الأعمال</h1>
                     <p class="hero-description">نقدم خدمات احترافية في مجالات التحليل الإحصائي والمالي والقياسي، الترجمة المعتمدة، إعداد الحقائب التدريبية والتدقيق اللغوي بأعلى معايير الجودة، وكتابة المحتوى.</p>
                     <div class="hero-buttons">
-                        <a href="#" id="btn-services" class="btn-services" aria-label="خدماتنا">خدماتنا</a>
-                        <a href="#" class="btn-secondary" aria-label="تواصل معنا">تواصل معنا</a>
+                        <a href="/pages/services/allServices.html" id="btn-services" class="btn-services" aria-label="خدماتنا">خدماتنا</a>
+                        <a href="/pages/contact/contact.html" class="btn-secondary" aria-label="تواصل معنا">تواصل معنا</a>
                     </div>
                 </div>
+            </div>
+            <div class="col-12">
                 <div class="service-cards" role="list">
                     <div class="card service-card" role="listitem">
                         <i class="fas fa-chart-line" aria-hidden="true"></i>
-                        <h3>التحليل الإحصائي</h3>
-                        <p>حلول دقيقة لتحليل البيانات باستخدام أحدث الأدوات.</p>
+                        <h3> التحليل الإحصائي والقياسي والمالي</h3>
                         <div class="card-link">
-                            <a href="#" aria-label="استكشف التحليل الإحصائي">استكشف الخدمة</a>
+                            <a href="/pages/services/statistical-analysis.html" aria-label="استكشف التحليل الإحصائي">استكشف الخدمة</a>
                         </div>
                     </div>
                     <div class="card service-card" role="listitem">
@@ -76,7 +78,7 @@
                         <h3>الترجمة المعتمدة</h3>
                         <p>ترجمة عالية الجودة مع الحفاظ على السياق.</p>
                         <div class="card-link">
-                            <a href="#" aria-label="استكشف الترجمة المعتمدة">استكشف الخدمة</a>
+                            <a href="/pages/services/translation.html" aria-label="استكشف الترجمة المعتمدة">استكشف الخدمة</a>
                         </div>
                     </div>
                     <div class="card service-card" role="listitem">
@@ -84,7 +86,7 @@
                         <h3>التدريب المهني</h3>
                         <p>برامج تدريبية مصممة لتطوير المهارات.</p>
                         <div class="card-link">
-                            <a href="#" aria-label="استكشف التدريب المهني">استكشف الخدمة</a>
+                            <a href="/pages/services/training-packages.html" aria-label="استكشف التدريب المهني">استكشف الخدمة</a>
                         </div>
                     </div>
                     <div class="card service-card" role="listitem">
@@ -92,26 +94,36 @@
                         <h3>التدقيق اللغوي</h3>
                         <p>مراجعة نصوص لضمان الدقة والسلاسة.</p>
                         <div class="card-link">
-                            <a href="#" aria-label="استكشف التدقيق اللغوي">استكشف الخدمة</a>
+                            <a href="/pages/services/proofreading.html" aria-label="استكشف التدقيق اللغوي">استكشف الخدمة</a>
+                        </div>
+                    </div>
+                    <div class="card service-card" role="listitem">
+                        <i class="fas fa-pen" aria-hidden="true"></i>
+                        <h3>كتابة المحتوى</h3>
+                        <p>إنشاء محتوى إبداعي يجذب الجمهور ويعزز العلامة التجارية.</p>
+                        <div class="card-link">
+                            <a href="/pages/services/Content writing.html" aria-label="استكشف كتابة المحتوى">استكشف الخدمة</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="hero-shapes">
-                <div class="hero-shape-1" aria-hidden="true"></div>
-                <div class="hero-shape-2" aria-hidden="true"></div>
-            </div>
         </div>
-    </section>
+        <div class="hero-shapes">
+            <div class="hero-shape-1" aria-hidden="true"></div>
+            <div class="hero-shape-2" aria-hidden="true"></div>
+        </div>
+    </div>
+</section>
 
-  <section class="feature-area py-5 bg-light" aria-label="قسم خدماتنا">
+
+<section class="feature-area py-5 bg-light" aria-label="قسم خدماتنا">
     <div class="container">
       <div class="feature-header text-center mb-5">
         <h2 class="feature-main-title">خدماتنا</h2>
         <p class="feature-sub-title">نقدم مجموعة متنوعة من الخدمات المهنية المصممة لتلبية احتياجاتك بأعلى معايير الجودة والدقة.</p>
       </div>
       <div class="row g-4">
-        <div class="col-md-6 col-lg-3">
+        <div class="col-12 col-md-6 col-lg-2-4">
           <div class="feature-item" role="region" aria-label="التحليل الإحصائي">
             <div class="feature-image">
               <img src="/assets/images/services/services1.webp" alt="التحليل الإحصائي" class="img-fluid" loading="lazy">
@@ -124,8 +136,7 @@
             </div>
           </div>
         </div>
-        <!-- تكرار نفس التعديلات للباقي -->
-        <div class="col-md-6 col-lg-3">
+        <div class="col-12 col-md-6 col-lg-2-4">
           <div class="feature-item" role="region" aria-label="الترجمة المعتمدة">
             <div class="feature-image">
               <img src="/assets/images/services/services2.webp" alt="الترجمة المعتمدة" class="img-fluid" loading="lazy">
@@ -138,7 +149,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3">
+        <div class="col-12 col-md-6 col-lg-2-4">
           <div class="feature-item" role="region" aria-label="إعداد الحقائب التدريبية">
             <div class="feature-image">
               <img src="/assets/images/services/services3.webp" alt="إعداد الحقائب التدريبية" class="img-fluid" loading="lazy">
@@ -151,10 +162,10 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3">
+        <div class="col-12 col-md-6 col-lg-2-4">
           <div class="feature-item" role="region" aria-label="التدقيق اللغوي">
             <div class="feature-image">
-              <img src="/assets/images/services/services4.webp" alt="التدقيق اللغوي" class="img-fluid" loading="lazy">
+              <img src="/assets/images/services/services4.webp" alt="التدقيق ال lichوي" class="img-fluid" loading="lazy">
               <div class="feature-overlay" aria-hidden="true">التدقيق اللغوي</div>
             </div>
             <div class="feature-body">
@@ -164,8 +175,23 @@
             </div>
           </div>
         </div>
+        <div class="col-12 col-md-6 col-lg-2-4">
+          <div class="feature-item" role="region" aria-label="كتابة المحتوى">
+            <div class="feature-image">
+              <img src="/assets/images/services/services5.webp" alt="كتابة المحتوى" class="img-fluid" loading="lazy">
+              <div class="feature-overlay" aria-hidden="true">كتابة المحتوى</div>
+            </div>
+            <div class="feature-body">
+              <h5 class="feature-title">كتابة المحتوى</h5>
+              <p class="feature-text">إنشاء محتوى إبداعي يجذب الجمهور ويعزز العلامة التجارية بأسلوب احترافي.</p>
+              <a href="/pages/services/content-writing.html" class="feature-btn btn-primary" aria-label="اقرأ المزيد عن كتابة المحتوى">اقرأ المزيد</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <a class="btn-all-services" href="/pages/services/allServices.html" aria-label="جميع خدماتنا">جميع خدماتنا</a>
+      <div class="text-center mt-5">
+        <a class="btn-all-services" href="/pages/services/allServices.html" aria-label="جميع خدماتنا">جميع خدماتنا</a>
+      </div>
     </div>
   </section>
 

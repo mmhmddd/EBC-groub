@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const articleContainer = document.getElementById('articleContainer');
   const clearFilter = document.getElementById('clearFilter');
   const loader = document.getElementById('loader');
-  const carouselInner = document.getElementById('articleCarousel')?.querySelector('.carousel-inner');
-  const carouselIndicators = document.getElementById('articleCarousel')?.querySelector('.carousel-indicators');
   const filterBtn = document.getElementById('filterBtn');
   const sidebar = document.getElementById('sidebar');
   const featuredArticles = document.getElementById('featuredArticles');
@@ -33,9 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
           return;
         }
         allArticles = data;
-        populateCarousel();
         populateCategories();
-        renderFeaturedArticles(allArticles.slice(0, 3));
+ renderFeaturedArticles(allArticles.slice(0, 3));
         renderArticles(allArticles);
         filterArticles(allArticles);
         toggleFeaturedSection();
@@ -46,33 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
         loader.style.display = 'none';
       })
       .finally(() => loader.style.display = 'none');
-  }
-
-  function populateCarousel() {
-    if (!carouselInner || !carouselIndicators) return;
-    carouselInner.innerHTML = '';
-    carouselIndicators.innerHTML = '';
-    const topArticles = allArticles.slice(0, 5);
-    topArticles.forEach((article, index) => {
-      const isActive = index === 0 ? 'active' : '';
-      const slide = document.createElement('div');
-      slide.className = `carousel-item ${isActive}`;
-      slide.innerHTML = `
-        <img src="${article.image}" class="d-block w-100" alt="${article.title}" loading="lazy" draggable="false">
-        <div class="carousel-caption d-md-block">
-          <h5>${article.title}</h5>
-          <p>${article.category}</p>
-          <a href="${article.slug}" class="article-btn">اقرأ المزيد</a>
-        </div>
-      `;
-      carouselInner.appendChild(slide);
-      const indicator = document.createElement('button');
-      indicator.setAttribute('data-bs-target', '#articleCarousel');
-      indicator.setAttribute('data-bs-slide-to', index);
-      indicator.className = isActive ? 'active' : '';
-      indicator.setAttribute('aria-label', `Slide ${index + 1}`);
-      carouselIndicators.appendChild(indicator);
-    });
   }
 
   function populateCategories() {
