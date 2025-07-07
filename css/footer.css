@@ -100,55 +100,41 @@
   font-weight: 600;
   color: var(--ebc-light);
 }
-
 .payment-methods {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 images per row */
   gap: 10px;
-  justify-content: center;
+  justify-items: center; /* Center images horizontally */
+  align-items: center; /* Center images vertically */
 }
 
 .payment-img {
-  width: 90px;
-  height: 100px;
+  width: 80px; /* Fixed width */
+  height: 50px; /* Fixed height */
   object-fit: contain;
   transition: var(--transition-normal);
 }
 
-.payment-img:hover {
-  transform: scale(1.1);
-  opacity: 0.9;
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  padding-top: 20px;
-  font-size: 0.95rem;
-  color: var(--ebc-light);
-}
-
-.footer-bottom span {
-  color: var(--ebc-gold);
-}
-
 @media (max-width: 768px) {
   .payment-methods {
+    grid-template-columns: repeat(3, 1fr); /* Maintain 3 images per row */
     gap: 8px;
   }
 
   .payment-img {
-    width: 45px;
-    height: 25px;
+    width: 60px; /* Slightly smaller fixed size for tablets */
+    height: 40px;
   }
 }
 
 @media (max-width: 480px) {
   .payment-methods {
+    grid-template-columns: repeat(3, 1fr); /* Maintain 3 images per row */
     gap: 6px;
   }
 
   .payment-img {
-    width: 40px;
-    height: 22px;
+    width: 50px; /* Smaller fixed size for mobile */
+    height: 30px;
   }
 }
