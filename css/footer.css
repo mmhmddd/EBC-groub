@@ -1,4 +1,3 @@
-/* ===== المتغيرات والألوان الأساسية ===== */
 :root {
   --ebc-blue: #1E3A8A;
   --ebc-teal: #14B8A6;
@@ -19,6 +18,7 @@
   --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.1);
   --glow-color: rgba(110, 196, 186, 0.6);
 }
+
 .footer-section {
   background: linear-gradient(to right, var(--bg-gradient-start), var(--bg-gradient-end));
   color: var(--ebc-light);
@@ -29,7 +29,8 @@
 .footer-item {
   padding: 0 20px;
 }
-.title{
+
+.title {
   font-size: 1.4rem;
   font-weight: 600;
   margin: 12px;
@@ -99,40 +100,24 @@
   font-weight: 600;
   color: var(--ebc-light);
 }
-.payment-img{
-  width: 200px !important;
-  height: 100px;
-}
 
-.newsletter {
-  margin-top: 15px;
+.payment-methods {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 10px;
+  justify-content: center;
 }
 
-.newsletter input[type="email"] {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-  font-size: 1rem;
-}
-
-.newsletter button {
-  background-color: var(--ebc-gold);
-  color: var(--ebc-dark);
-  border: none;
-  padding: 10px;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
+.payment-img {
+  width: 90px;
+  height: 100px;
+  object-fit: contain;
   transition: var(--transition-normal);
 }
 
-.newsletter button:hover {
-  background-color: var(--ebc-light);
-  color: var(--primary-blue);
+.payment-img:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
 }
 
 .footer-bottom {
@@ -144,4 +129,26 @@
 
 .footer-bottom span {
   color: var(--ebc-gold);
+}
+
+@media (max-width: 768px) {
+  .payment-methods {
+    gap: 8px;
+  }
+
+  .payment-img {
+    width: 45px;
+    height: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .payment-methods {
+    gap: 6px;
+  }
+
+  .payment-img {
+    width: 40px;
+    height: 22px;
+  }
 }
